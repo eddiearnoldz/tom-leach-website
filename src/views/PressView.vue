@@ -1,6 +1,6 @@
 <template>
   <div class="press">
-    <h1>This is a press page</h1>
+    <h1>Always hounded by the British press</h1>
   </div>
 </template>
 
