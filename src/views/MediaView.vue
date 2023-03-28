@@ -5,11 +5,11 @@
 </template>
 
 <style>
-@media (min-width: 1024px) {
   .media {
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    place-items: center;
+    justify-content: center;
+
   }
-}
 </style>
