@@ -3,6 +3,8 @@
 body {
   display: flex;
   place-items: center;
+  background-image: url('../assets/mixing-desk.jpeg');
+  background-blend-mode: overlay;
 }
 
 #app {
@@ -10,6 +12,7 @@ body {
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
+
 }
 
 a,
@@ -29,6 +32,7 @@ a,
 .container h1 {
   margin: 40px 0;
   text-align: center;
+  color: white
 }
 
 .container p {
