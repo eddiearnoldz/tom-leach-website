@@ -1,11 +1,23 @@
 <template>
   <div class="album_gallery">
-    <filter-bar
-      :filters="filters"
-      @filter-selected="setFilter"
-    ></filter-bar>
-    <album-carousel-mobile v-if="isMobileView" :albums="albums" :selectedFilter="selectedFilter"></album-carousel-mobile>
-    <album-grid v-else :albums="albums" :selectedFilter="selectedFilter"></album-grid>
+    <album-carousel-mobile 
+      v-if="isMobileView" 
+      :albums="albums" 
+      :selectedFilter="selectedFilter"
+      @update-album-title="updateAlbumTitle"
+    ></album-carousel-mobile>
+    <album-grid 
+      v-else 
+      :albums="albums" 
+      :selectedFilter="selectedFilter"
+      @update-album-title="updateAlbumTitle"
+    ></album-grid>
+    <album-footer 
+      :filters="filters" 
+      :setFilter="setFilter" 
+      :activeAlbumTitle="activeAlbumTitle"
+      :activeAlbumImage="activeAlbumImage"
+    ></album-footer>
   </div>
 </template>
 
@@ -14,10 +26,11 @@ import { defineComponent, ref, onMounted, onUnmounted } from 'vue';
 import FilterBar from '@/components/FilterBar.vue';
 import AlbumCarouselMobile from '@/components/AlbumCarouselMobile.vue';
 import AlbumGrid from '@/components/AlbumGrid.vue';
+import AlbumFooter from '@/components/AlbumFooter.vue';
 import { albums } from '@/data/albums';
 
 export default defineComponent({
-  components: { FilterBar, AlbumCarouselMobile, AlbumGrid },
+  components: { FilterBar, AlbumCarouselMobile, AlbumGrid, AlbumFooter },
   setup() {
     const isMobileView = ref(window.innerWidth < 768);
     const selectedFilter = ref('');
@@ -26,6 +39,8 @@ export default defineComponent({
       'typeOfWork_production',
       'typeOfWork_writing'
     ]);
+    const activeAlbumTitle = ref('');
+    const activeAlbumImage = ref('');
 
     const setFilter = filter => {
       selectedFilter.value = filter;
@@ -33,6 +48,11 @@ export default defineComponent({
 
     const updateView = () => {
       isMobileView.value = window.innerWidth < 768;
+    };
+
+    const updateAlbumTitle = ({ title, image }) => {
+      activeAlbumTitle.value = title;
+      activeAlbumImage.value = image;
     };
 
     onMounted(() => {
@@ -48,7 +68,10 @@ export default defineComponent({
       selectedFilter,
       filters,
       setFilter,
-      albums
+      albums,
+      activeAlbumTitle,
+      activeAlbumImage,
+      updateAlbumTitle
     };
   }
 });
@@ -57,8 +80,17 @@ export default defineComponent({
 <style scoped>
 .album_gallery {
   position: fixed;
-  top: 63px;
+  top: 0;
   width: 100vw;
   height: calc(100dvh - 63px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media screen and (min-width:768px) {
+  .album_gallery {
+    top: 63px;
+  }
 }
 </style>

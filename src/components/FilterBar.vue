@@ -34,10 +34,13 @@ export default defineComponent({
   flex-direction: column;
   gap: 10px;
   justify-content: center;
-  position: absolute;
-  bottom: 0px;
   overflow-x: hidden;
   z-index: 101020102102;
+  width: 100vw;
+}
+
+.filter-bar h2{
+  padding: 0 16px; 
 }
 
 .filters {

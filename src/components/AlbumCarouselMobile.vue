@@ -7,13 +7,12 @@
       :style="getSlideStyle(index)"
     >
       <img :src="album.image" :alt="album.title" class="album-image" />
-      <div v-if="activeIndex === index" class="album-title">{{ album.title }}</div>
     </div>
   </div>
 </template>
 
 <script>
-import { defineComponent, ref, computed, onMounted, nextTick } from 'vue';
+import { defineComponent, ref, computed, onMounted, nextTick, watch } from 'vue';
 
 export default defineComponent({
   props: {
@@ -26,7 +25,8 @@ export default defineComponent({
       default: ''
     }
   },
-  setup(props) {
+  emits: ['update-album-title'],
+  setup(props, { emit }) {
     const activeIndex = ref(0);
     const carouselContainer = ref(null);
 
@@ -44,7 +44,7 @@ export default defineComponent({
       const slide = container.children[index];
       const slideRect = slide.getBoundingClientRect();
       const slideMiddleY = slideRect.top + slideRect.height / 2;
-      const thresholdY = window.innerHeight * 0.5; // 50vh from the top
+      const thresholdY = window.innerHeight * 0.6; // 50vh from the top
 
       let scale;
       if (index === activeIndex.value) {
@@ -52,7 +52,7 @@ export default defineComponent({
       } else if (slideMiddleY > thresholdY) {
         const distanceToThreshold = slideMiddleY - thresholdY;
         const maxDistance = window.innerHeight - thresholdY;
-        const scaleFactor = Math.max(0.3, 1 - (distanceToThreshold / maxDistance));
+        const scaleFactor = Math.max(0.2, 1 - (distanceToThreshold / maxDistance));
         scale = scaleFactor;
       } else {
         scale = 1;
@@ -65,7 +65,7 @@ export default defineComponent({
 
     const onScroll = () => {
       const container = carouselContainer.value;
-      const thresholdY = window.innerHeight * 0.5; // 50vh from the top
+      const thresholdY = window.innerHeight * 0.6; // 50vh from the top
 
       let closestIndex = 0;
       let closestDistance = Infinity;
@@ -84,10 +84,13 @@ export default defineComponent({
       }
 
       activeIndex.value = closestIndex;
+      emit('update-album-title', {
+        title: filteredAlbums.value[closestIndex].title,
+        image: filteredAlbums.value[closestIndex].image,
+      });
     };
 
     const initializeScaling = () => {
-
       const container = carouselContainer.value;
       const slides = container.children;
       for (let i = 0; i < slides.length; i++) {
@@ -100,7 +103,14 @@ export default defineComponent({
       container.addEventListener('scroll', onScroll);
       nextTick(() => {
         initializeScaling();
-        onScroll(); 
+        onScroll(); // Initial call to set the first active slide
+      });
+    });
+
+    watch(activeIndex, (newIndex) => {
+      emit('update-album-title', {
+        title: filteredAlbums.value[newIndex].title,
+        image: filteredAlbums.value[newIndex].image,
       });
     });
 
@@ -121,12 +131,12 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20vh 0.5rem 50vh;
+  padding: 40vh 0.5rem 30vh;
 }
 
 .slide {
   width: 100%;
-  height: 25vh;
+  height: 30vh;
   margin: 5px 0;
   transition: transform 0.3s;
   display: flex;
@@ -143,12 +153,4 @@ export default defineComponent({
   border-radius: 2px;
 }
 
-.album-title {
-  position: absolute;
-  bottom: 10px;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
 </style>

@@ -57,7 +57,7 @@ header {
   z-index: 1000;
   position: fixed;
   width: 100vw;
-  background: black;
+  background: transparent;
 }
 
 .logo {

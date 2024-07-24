@@ -1,13 +1,12 @@
-<!-- AlbumGrid.vue -->
 <template>
   <div class="album-grid">
     <div
       v-for="(album, index) in filteredAlbums"
       :key="index"
-      class="album-tile"
+      class="grid-item"
+      @mouseover="updateAlbumTitle(album.title, album.image)"
     >
-      <img :src="album.image" :alt="album.title" />
-      <div class="album-title">{{ album.title }}</div>
+      <img :src="album.image" :alt="album.title" class="album-image" />
     </div>
   </div>
 </template>
@@ -26,13 +25,23 @@ export default defineComponent({
       default: ''
     }
   },
-  computed: {
-    filteredAlbums() {
-      if (!this.selectedFilter) return this.albums;
-      return this.albums.filter(album =>
-        album.filters.includes(this.selectedFilter)
+  emits: ['update-album-title'],
+  setup(props, { emit }) {
+    const filteredAlbums = computed(() => {
+      if (!props.selectedFilter) return props.albums;
+      return props.albums.filter(album =>
+        album.filters.includes(props.selectedFilter)
       );
-    }
+    });
+
+    const updateAlbumTitle = (title, image) => {
+      emit('update-album-title', { title, image });
+    };
+
+    return {
+      filteredAlbums,
+      updateAlbumTitle
+    };
   }
 });
 </script>
@@ -40,29 +49,20 @@ export default defineComponent({
 <style scoped>
 .album-grid {
   display: grid;
-  grid-template-columns: repeat(6, 10vw);
-  grid-template-rows: repeat(3, 10vw);
+  grid-template-columns: repeat(6, 1fr);
   gap: 20px;
-  padding: 40px;
+  padding: 2rem;
 }
 
-.album-tile {
+.grid-item {
   position: relative;
-  width: 100%;
-  height: 100%;
+  cursor: pointer;
 }
 
-.album-tile img {
+.album-image {
   width: 100%;
   height: 100%;
-}
-
-.album-title {
-  position: absolute;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  width: 100%;
-  text-align: center;
+  object-fit: cover;
+  border-radius: 2px;
 }
 </style>
