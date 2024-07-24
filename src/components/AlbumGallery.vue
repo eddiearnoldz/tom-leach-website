@@ -82,7 +82,7 @@ export default defineComponent({
   position: fixed;
   top: 0;
   width: 100vw;
-  height: calc(100dvh - 63px);
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
