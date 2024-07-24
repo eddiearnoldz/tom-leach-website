@@ -1,5 +1,5 @@
 <script>
-import SvgIcon from '/src/components/SvgIcon.vue';
+import SvgIcon from '@/components/SvgIcon.vue';
 export default {
   components: {
     SvgIcon
