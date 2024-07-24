@@ -131,7 +131,7 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30vh 0.5rem 30vh;
+  padding: 30vh 2rem 30vh;
 }
 
 .slide {
@@ -144,6 +144,7 @@ export default defineComponent({
   align-items: center;
   justify-content: center;
   position: relative;
+  scroll-snap-align: start;
 }
 
 .album-image {
