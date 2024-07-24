@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Urbanist-Italic';
+  src: url('@/src/assets/fonts/Urbanist-Italic.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Urbanist-Regular';
+  src: url('@/src/assets/fonts/Urbanist-Regular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}

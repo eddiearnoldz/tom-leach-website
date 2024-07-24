@@ -3,8 +3,7 @@
 body {
   display: flex;
   place-items: center;
-  background-image: url('../assets/mixing-desk.jpeg');
-  background-blend-mode: overlay;
+  background-color: black;
 }
 
 #app {
@@ -20,6 +19,8 @@ a,
   text-decoration: none;
   color: hsla(160, 100%, 37%, 1);
   transition: 0.4s;
+  font-family: 'Urbanist-Regular';
+  text-transform: uppercase;
 }
 
 .container {
