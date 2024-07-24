@@ -1,8 +1,7 @@
 <script setup>
 import { ref, watch } from 'vue';
 import { RouterLink, RouterView } from 'vue-router';
-import HamburgerMenuIcon from './assets/icons/HamburgerMenuIcon.vue';
-import MenuCloseIcon from './assets/icons/MenuCloseIcon.vue';
+import SvgIcon from '@/components/SvgIcon.vue';
 
 const isMenuOpen = ref(false);
 
@@ -27,7 +26,8 @@ watch(isMenuOpen, (newValue) => {
   <header>
     <RouterLink @click="closeMenu" to="/" class="logo">TOM/LEACH</RouterLink>
     <button @click="toggleMenu" class="menu-button">
-      <component :is="isMenuOpen ? MenuCloseIcon : HamburgerMenuIcon" class="icon" :class="{ 'menu-open': isMenuOpen }"/>
+      <SvgIcon v-if="!isMenuOpen" name="HamburgerMenuIcon" />
+      <SvgIcon v-if="isMenuOpen" name="MenuCloseIcon" />
     </button>
   </header>
   <div :class="{ 'menu-open': isMenuOpen }" class="mobile-menu">
