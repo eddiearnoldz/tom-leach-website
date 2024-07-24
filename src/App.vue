@@ -55,6 +55,9 @@ header {
   padding: 1rem;
   position: relative;
   z-index: 1000;
+  position: fixed;
+  width: 100vw;
+  background: black;
 }
 
 .logo {
@@ -83,6 +86,7 @@ header {
 .mobile-menu {
   position: fixed;
   left: 0;
+  top: 63px;
   width: 100%;
   height: calc(100dvh - 63px);
   background: var(--color-background);

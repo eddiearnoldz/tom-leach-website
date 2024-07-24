@@ -88,12 +88,13 @@ p {
   overflow: hidden;
 }
 
+.home {
+  margin-top: 63px;
+}
+
 @media screen and (min-width: 768px) {
   nav {
     flex-direction: row;
-  }
-  header {
-    padding: 1rem 2rem;
   }
   p {
     font-size: 1.4rem;
