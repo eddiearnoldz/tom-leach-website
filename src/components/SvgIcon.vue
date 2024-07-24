@@ -1,3 +1,4 @@
+<!-- SvgIcon.vue -->
 <script>
 import { defineAsyncComponent } from 'vue';
 
@@ -8,12 +9,9 @@ export default {
       required: true,
     },
   },
-
   computed: {
     dynamicComponent() {
-      const name = this.name;
-
-      return defineAsyncComponent(() => import(`@/assets/icons/${name}.vue`));
+      return defineAsyncComponent(() => import(`../assets/icons/${this.name}.vue`));
     },
   },
 };
