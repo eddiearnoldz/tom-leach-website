@@ -1,12 +1,13 @@
 @font-face {
   font-family: 'Urbanist-Italic';
-  src: url('@/assets/fonts/Urbanist-Italic.ttf') format('ttf');
+  src: url('/assets/fonts/Urbanist-Italic.ttf') format('truetype');
   font-weight: normal;
-  font-style: normal;
+  font-style: italic;
 }
+
 @font-face {
   font-family: 'Urbanist-Regular';
-  src: url('@/assets/fonts/Urbanist-Regular.ttf') format('ttf');
+  src: url('/assets/fonts/Urbanist-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
