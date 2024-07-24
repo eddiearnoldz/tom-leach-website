@@ -1,8 +1,8 @@
 <script setup>
 import { ref, watch } from 'vue';
 import { RouterLink, RouterView } from 'vue-router';
-import HamburgerMenuIcon from '../assets/icons/HamburgerMenuIcon.vue';
-import MenuCloseIcon from '../assets/icons/MenuCloseIcon.vue';
+import HamburgerMenuIcon from './assets/icons/HamburgerMenuIcon.vue';
+import MenuCloseIcon from './assets/icons/MenuCloseIcon.vue';
 
 const isMenuOpen = ref(false);
 
