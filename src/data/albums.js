@@ -1,47 +1,47 @@
 export const albums = [
   {
-    title: 'Defintely Maybe Oasis',
-    image: '@/assets/albums/defintely_maybe_album.jpeg',
+    title: 'Definitely Maybe Oasis',
+    image: new URL('@/assets/albums/definitely_maybe_album.jpeg', import.meta.url).href,
     filters: ['typeOfWork_soundEngineer', 'typeOfWork_production']
   },
   {
     title: 'Album 2',
-    image: '@/assets/albums/defintely_maybe_album.jpeg',
+    image: new URL('@/assets/albums/definitely_maybe_album.jpeg', import.meta.url).href,
     filters: ['typeOfWork_writing']
   },
   {
     title: 'Album 3',
-    image: '@/assets/albums/defintely_maybe_album.jpeg',
+    image: new URL('@/assets/albums/definitely_maybe_album.jpeg', import.meta.url).href,
     filters: ['typeOfWork_soundEngineer']
   },
   {
-    title: 'Defintely Maybe Oasis',
-    image: '@/assets/albums/defintely_maybe_album.jpeg',
+    title: 'Definitely Maybe Oasis',
+    image: new URL('@/assets/albums/definitely_maybe_album.jpeg', import.meta.url).href,
     filters: ['typeOfWork_soundEngineer', 'typeOfWork_production']
   },
   {
     title: 'Album 2',
-    image: '@/assets/albums/defintely_maybe_album.jpeg',
+    image: new URL('@/assets/albums/definitely_maybe_album.jpeg', import.meta.url).href,
     filters: ['typeOfWork_writing']
   },
   {
     title: 'Album 3',
-    image: '@/assets/albums/defintely_maybe_album.jpeg',
+    image: new URL('@/assets/albums/definitely_maybe_album.jpeg', import.meta.url).href,
     filters: ['typeOfWork_soundEngineer']
   },
   {
-    title: 'Defintely Maybe Oasis',
-    image: '@/assets/albums/defintely_maybe_album.jpeg',
+    title: 'Definitely Maybe Oasis',
+    image: new URL('@/assets/albums/definitely_maybe_album.jpeg', import.meta.url).href,
     filters: ['typeOfWork_soundEngineer', 'typeOfWork_production']
   },
   {
     title: 'Album 2',
-    image: '@/assets/albums/defintely_maybe_album.jpeg',
+    image: new URL('@/assets/albums/definitely_maybe_album.jpeg', import.meta.url).href,
     filters: ['typeOfWork_writing']
   },
   {
     title: 'Album 3',
-    image: '@/assets/albums/defintely_maybe_album.jpeg',
+    image: new URL('@/assets/albums/definitely_maybe_album.jpeg', import.meta.url).href,
     filters: ['typeOfWork_soundEngineer']
-  }
+  },
 ];
