@@ -24,9 +24,9 @@ export default {
     </p>
 
     <div class="contact_icons">
-      <a class="contact_icon facebook" href="http://facebook.com/tslleach" target="_blank" alt="facebook-icon"><SvgIcon name="facebookIcon" /></a>
-      <a class="contact_icon twitter" href="http://twitter.com/tslleach" target="_blank" alt="twitter-icon"><SvgIcon name="twitterIcon" /></a>
-      <a class="contact_icon mail" href="mailto:tom@snapstudios.co.uk" target="_blank" alt="Mail" aria-label="Mail"><SvgIcon name="mailIcon" /></a>
+      <a class="contact_icon facebook" href="http://facebook.com/tslleach" target="_blank" alt="facebook-icon"><SvgIcon name="FacebookIcon" /></a>
+      <a class="contact_icon twitter" href="http://twitter.com/tslleach" target="_blank" alt="twitter-icon"><SvgIcon name="TwitterIcon" /></a>
+      <a class="contact_icon mail" href="mailto:tom@snapstudios.co.uk" target="_blank" alt="Mail" aria-label="Mail"><SvgIcon name="MailIcon" /></a>
     </div>
   </div>
 </template>
