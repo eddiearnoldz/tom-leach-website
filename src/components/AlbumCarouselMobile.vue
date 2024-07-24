@@ -44,7 +44,7 @@ export default defineComponent({
       const slide = container.children[index];
       const slideRect = slide.getBoundingClientRect();
       const slideMiddleY = slideRect.top + slideRect.height / 2;
-      const thresholdY = window.innerHeight * 0.6; // 50vh from the top
+      const thresholdY = window.innerHeight * 0.5; // 50vh from the top
 
       let scale;
       if (index === activeIndex.value) {
@@ -65,7 +65,7 @@ export default defineComponent({
 
     const onScroll = () => {
       const container = carouselContainer.value;
-      const thresholdY = window.innerHeight * 0.6; // 50vh from the top
+      const thresholdY = window.innerHeight * 0.5; // 50vh from the top
 
       let closestIndex = 0;
       let closestDistance = Infinity;
@@ -136,7 +136,7 @@ export default defineComponent({
 
 .slide {
   width: 100%;
-  height: 30vh;
+  height: 25vh;
   margin: 5px 0;
   transition: transform 0.3s;
   display: flex;

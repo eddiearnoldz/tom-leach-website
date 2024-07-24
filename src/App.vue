@@ -61,8 +61,8 @@ header {
 }
 
 .logo {
-  font-weight: bold;
-  font-size: 2.5rem;
+  font-weight:bold;
+  font-size: 1.5rem;
   text-decoration: none;
   color: var(--color-text);
   line-height: 1;
@@ -74,8 +74,8 @@ header {
   border: none;
   cursor: pointer;
   padding: 0;
-  height: 35px;
-  width: 35px;
+  height: 30px;
+  width: 30px;
 }
 
 .menu-button svg {
@@ -139,6 +139,15 @@ header {
   .mobile-menu nav a {
     font-size: 3.0rem;
   }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  .menu-button {
+  height: 35px;
+  width: 35px;
+}
 
 }
 
