@@ -25,7 +25,7 @@ watch(isMenuOpen, (newValue) => {
 
 <template>
   <header>
-    <RouterLink @click="closeMenu" to="/" class="logo">TOM_LEACH</RouterLink>
+    <RouterLink @click="closeMenu" to="/" class="logo">TOM/LEACH</RouterLink>
     <button @click="toggleMenu" class="menu-button">
       <component :is="isMenuOpen ? MenuCloseIcon : HamburgerMenuIcon" class="icon" :class="{ 'menu-open': isMenuOpen }"/>
     </button>

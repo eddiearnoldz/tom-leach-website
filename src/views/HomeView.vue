@@ -6,7 +6,7 @@
 
 <style>
   .home {
-    min-height: 100vh;
+    min-height: calc(100dvh - 63px);
     display: flex;
     place-items: center;
     justify-content: center;

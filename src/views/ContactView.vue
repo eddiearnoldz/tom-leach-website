@@ -1,5 +1,5 @@
 <script>
-import SvgIcon from '../components/SvgIcon.vue';
+import SvgIcon from '/src/components/SvgIcon.vue';
 export default {
   components: {
     SvgIcon
@@ -24,24 +24,32 @@ export default {
     </p>
 
     <div class="contact_icons">
-      <a class="contact_icon facebook" href="http://facebook.com/tslleach" target="_blank" alt="facebook-icon"><SvgIcon name="facebook-icon" /></a>
-      <a class="contact_icon twitter" href="http://twitter.com/tslleach" target="_blank" alt="twitter-icon"><SvgIcon name="twitter-icon" /></a>
-      <a class="contact_icon mail" href="mailto:tom@snapstudios.co.uk" target="_blank" alt="Mail" aria-label="Mail"><SvgIcon name="mail-icon" /></a>
+      <a class="contact_icon facebook" href="http://facebook.com/tslleach" target="_blank" alt="facebook-icon"><SvgIcon name="facebookIcon" /></a>
+      <a class="contact_icon twitter" href="http://twitter.com/tslleach" target="_blank" alt="twitter-icon"><SvgIcon name="twitterIcon" /></a>
+      <a class="contact_icon mail" href="mailto:tom@snapstudios.co.uk" target="_blank" alt="Mail" aria-label="Mail"><SvgIcon name="mailIcon" /></a>
     </div>
   </div>
 </template>
 
 <style>
  .contact {
-  text-align: center;
+    text-align: center;
+    height: calc(100dvh - 63px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 670px;
+    margin: 0 auto;
+    padding: 2rem;
  }
 
  .contact_icons {
   display: flex;
-  gap: 10px;
+  gap: 1rem;
   place-items: center;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
  }
 
  .contact_icon {
@@ -51,7 +59,7 @@ export default {
  }
 
 a.contact_icon path {
-  fill: #333333;
+  fill: #ffffff;
   transition-duration: 0.3s;
 }
 
