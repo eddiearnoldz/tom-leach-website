@@ -1,0 +1,88 @@
+/* src/assets/styles.css */
+
+/* Root variables for color palette */
+:root {
+  --color-white: #ffffff;
+  --color-white-soft: #f8f8f8;
+  --color-white-mute: #f2f2f2;
+
+  --color-black: #000000;
+  --color-black-soft: #1a1a1a;
+  --color-black-mute: #333333;
+
+  --color-border-light: rgba(0, 0, 0, 0.12);
+  --color-border-dark: rgba(255, 255, 255, 0.12);
+
+  --color-text-light: #000000;
+  --color-text-dark: #ffffff;
+}
+
+/* Semantic color variables for this project */
+:root {
+  --color-background: var(--color-white);
+  --color-background-soft: var(--color-white-soft);
+  --color-background-mute: var(--color-white-mute);
+
+  --color-border: var(--color-border-light);
+  --color-border-hover: var(--color-black-soft);
+
+  --color-heading: var(--color-text-light);
+  --color-text: var(--color-text-light);
+
+  --section-gap: 160px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--color-black);
+    --color-background-soft: var(--color-black-soft);
+    --color-background-mute: var(--color-black-mute);
+
+    --color-border: var(--color-border-dark);
+    --color-border-hover: var(--color-white-soft);
+
+    --color-heading: var(--color-text-dark);
+    --color-text: var(--color-text-dark);
+  }
+}
+
+/* Global styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Disable body scroll when menu is open */
+.no-scroll {
+  overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    flex-direction: row;
+  }
+  header {
+    padding: 1rem 2rem;
+  }
+}
+
+/* Additional global styles can go here */
