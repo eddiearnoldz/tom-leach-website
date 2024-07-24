@@ -52,7 +52,7 @@ export default defineComponent({
       } else if (slideMiddleY > thresholdY) {
         const distanceToThreshold = slideMiddleY - thresholdY;
         const maxDistance = window.innerHeight - thresholdY;
-        const scaleFactor = Math.max(0.2, 1 - (distanceToThreshold / maxDistance));
+        const scaleFactor = Math.max(0.4, 1 - (distanceToThreshold / maxDistance));
         scale = scaleFactor;
       } else {
         scale = 1;
@@ -131,7 +131,7 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30vh 2rem 30vh;
+  padding: 30vh 1.5rem 30vh;
 }
 
 .slide {
