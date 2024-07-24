@@ -126,12 +126,12 @@ export default defineComponent({
 
 <style scoped>
 .carousel-container {
-  height: 100vh;
+  height: 100dvh;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40vh 0.5rem 30vh;
+  padding: 20vh 0.5rem 30vh;
 }
 
 .slide {
