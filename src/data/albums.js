@@ -121,107 +121,107 @@ export const albums = [
   },
   {
     title: "In Groede | Gana | Album",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    image: '/assets/albums/gana_in_groede.png',
     filters: ['contribution_mixer', 'contribution_production', 'year_2022', 'genre_indie']
   },
   {
     title: "Take Cover | Neck&Neck | Single",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    image: '/assets/albums/neck_and_neck_take_cover.png',
     filters: ['contribution_mixer', 'contribution_producer', 'contribution_writer', 'year_2022', 'genre_rock']
   },
   {
     title: "Call It What You Like | Neck&Neck | Single",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    image: '/assets/albums/neck_and_neck_call_it_what_you_like.png',
     filters: ['contribution_mixer', 'contribution_producer', 'contribution_writer', 'year_2022', 'genre_rock']
   },
   {
     title: "Blindside| Neck&Neck | Single",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    image: '/assets/albums/neck_and_neck_blindside.png',
     filters: ['contribution_mixer', 'contribution_producer', 'contribution_writer', 'year_2021', 'genre_rock']
   },
   {
     title: "Doctor | HAWKE THE BAND | Single",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    image: '/assets/albums/hawke_the_band_doctor.png',
     filters: ['contribution_recording-enngineer', 'contribution_mixer', 'contribution_production', 'year_2024', 'genre_indie']
   },
   {
-    title: "Proposals | HAWKE THE BAND | Single",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    title: "Proposal | HAWKE THE BAND | Single",
+    image: '/assets/albums/hawke_the_band_proposal.png',
     filters: ['contribution_recording-enngineer', 'contribution_mixer', 'contribution_production', 'year_2024', 'genre_indie']
   },
   {
     title: "Scraps In The Bowl | HAWKE THE BAND | Single",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    image: '/assets/albums/hawke_the_band_scraps_in_the_bowl.png',
     filters: ['contribution_recording-enngineer', 'contribution_mixer', 'contribution_production', 'year_2024', 'genre_indie']
   },
   {
     title: "Bellicose Grounds | SUNKIN | Single",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    image: '/assets/albums/sunkin_bellicose_grounds.png',
     filters: ['contribution_mixer', 'contribution_producer', 'year_2023', 'genre_indie']
   },
   {
     title: "The Pond | SUNKIN | Single",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    image: '/assets/albums/sunkin_the_pond.png',
     filters: ['contribution_mixer', 'contribution_producer', 'year_2021', 'genre_indie']
   },
   {
     title: "Soma | Branko | Album",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    image: '/assets/albums/branko_soma.png',
     filters: ['contribution_mixer', 'year_2024', 'genre_electronic']
   },
   {
-    title: "Soma | Tion Wayne | Single",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    title: "Body | Tion Wayne | Single",
+    image: '/assets/albums/body_tion_wayne.png',
     filters: ['contribution_recording_engineer', 'year_2021', 'genre_rap']
   },
   {
     title: "Kanadia | Kanadia | Album",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    image: '/assets/albums/kanadia_kanadia.png',
     filters: ['contribution_mixer', 'contribution_recording_engineer', 'contribution_producer', 'year_2019', 'genre_rock']
   },
   {
     title: "June | Kanadia | Album",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    image: '/assets/albums/kanadia_june.png',
     filters: ['contribution_mixer', 'contribution_recording_engineer', 'contribution_producer', 'year_2022', 'genre_rock']
   },
   {
     title: "Garden | Exit Kid | Single",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    image: '/assets/albums/exit_kid_garden.png',
     filters: ['contribution_mixer', 'year_2020', 'genre_indie']
   },
   {
     title: "Time 2 Be | Codyy | Single",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    image: '/assets/albums/cody_time_2_be.png',
     filters: ['contribution_mixer', 'contribution_producer','year_2023', 'genre_indie']
   },
   {
     title: "Here I Go | Mulimba | EP",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    image: '/assets/albums/mulimba_here_i_go.png',
     filters: ['contribution_mixer', 'contribution_writer','contribution_producer', 'year_2021', 'genre_alt']
   },
   {
     title: "Live Like Me | Mulimba | Single",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    image: '/assets/albums/mulimba_live_like_me.png',
     filters: ['contribution_mixer', 'contribution_writer','contribution_producer', 'year_2022', 'genre_alt']
   },
   {
     title: "I'm Alive | Mulimba | Single",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    image: '/assets/albums/mulimba_im_alive.png',
     filters: ['contribution_mixer', 'contribution_writer','contribution_producer', 'year_2022', 'genre_alt']
   },
   {
     title: "Need You Near | Andrew Dickson | EP",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    image: '/assets/albums/andrew_dickson_need_you_near.png',
     filters: ['contribution_mixer', 'contribution_recording-engineer','contribution_producer', 'year_2022', 'genre_pop']
   },
   {
     title: "Siberia (ft Burna Boy) | Headie One | Single",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    image: '/assets/albums/headie_one_siberia.png',
     filters: ['contribution_recording-engineer', 'year_2021', 'genre_rap']
   },
   {
     title: "Hey Boy (ft Burna Boy) | Sia | Single",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    image: '/assets/albums/hey_boy_sia.png',
     filters: ['contribution_recording-engineer', 'year_2021', 'genre_pop']
   },
   {
