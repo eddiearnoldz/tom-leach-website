@@ -5,6 +5,7 @@
       :key="index"
       class="grid-item"
       @mouseover="updateAlbumTitle(album.title, album.image)"
+      @mouseleave="clearAlbumTitle"
     >
       <img :src="album.image" :alt="album.title" class="album-image" />
     </div>
@@ -37,10 +38,14 @@ export default defineComponent({
     const updateAlbumTitle = (title, image) => {
       emit('update-album-title', { title, image });
     };
+    const clearAlbumTitle = () => {
+      emit('update-album-title', { title: '', image: '' });
+    };
 
     return {
       filteredAlbums,
-      updateAlbumTitle
+      updateAlbumTitle,
+      clearAlbumTitle
     };
   }
 });

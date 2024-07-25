@@ -7,6 +7,7 @@
       :filters="filters" 
       @filter-selected="toggleFilter"
       :selectedFilters="selectedFilters"
+       @clear-filters="$emit('clear-filters')"
     ></filter-bar>
   </div>
 </template>

@@ -5,17 +5,18 @@
         <h3>{{ group.name.replace("-", " ") }}</h3>
         <div class="filter-options">
           <button
-          v-for="filter in group.filters"
-          :key="filter"
-          @click="toggleFilter(filter)"
-          :class="{ active: isSelected(filter) }"
+            v-for="filter in group.filters"
+            :key="filter"
+            @click="toggleFilter(filter)"
+            :class="{ active: isSelected(filter) }"
           >
-          {{ filter.split("_")[1].replace("-", " ") }}
-        </button>
+            {{ filter.split("_")[1].replace("-", " ") }}
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-  <h2 v-if="isMobile" @click="toggleFilters">FILTER<span>(<span v-if="!isOpen">+</span><span v-if="isOpen">-</span>)</span></h2>
+    <h2 v-if="isMobile" @click="toggleFilters">FILTER<span>(<span v-if="!isOpen">+</span><span v-if="isOpen">-</span>)</span></h2>
+    <button v-if="selectedFilters.length > 0" @click="clearFilters" class="clear-filters">clear ✕</button>
   </div>
 </template>
 
@@ -79,6 +80,9 @@ export default defineComponent({
     },
     isSelected(filter) {
       return this.selectedFilters.includes(filter);
+    },
+    clearFilters() {
+      this.$emit('clear-filters');
     }
   }
 });
@@ -137,6 +141,17 @@ export default defineComponent({
 
 .filter-bar button.active {
   color: #FEC600;
+}
+
+.clear-filters {
+  position: absolute;
+  bottom: 0px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {

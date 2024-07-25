@@ -15,6 +15,7 @@
     <album-footer 
       :filters="filters" 
       :toggleFilter="toggleFilter" 
+      @clear-filters="clearFilters"
       :activeAlbumTitle="activeAlbumTitle"
       :activeAlbumImage="activeAlbumImage"
       :selectedFilters="selectedFilters"
@@ -35,9 +36,9 @@ export default defineComponent({
     const isMobileView = ref(window.innerWidth < 768);
     const selectedFilters = ref([]);
     const filters = ref([
-      'type-of-work_sound-engineer',
-      'type-of-work_production',
-      'type-of-work_writing',
+      'contribution_sound-engineer',
+      'contribution_production',
+      'contribution_writing',
       'year_2020',
       'year_2021',
       'year_2022',
@@ -59,6 +60,10 @@ export default defineComponent({
       } else {
         selectedFilters.value.splice(index, 1);
       }
+    };
+
+    const clearFilters = () => {
+      selectedFilters.value = [];
     };
 
     const filteredAlbums = computed(() => {
@@ -94,6 +99,7 @@ export default defineComponent({
       activeAlbumImage,
       updateAlbumTitle,
       toggleFilter,
+      clearFilters,
       filteredAlbums
     };
   }
