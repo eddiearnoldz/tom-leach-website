@@ -107,12 +107,14 @@ export default defineComponent({
   display: flex;
   flex-direction: row;
   gap: 10px;
+  width: max-content;
 }
 
 .filter-group {
   display: flex;
   flex-direction: column;
   padding: 0;
+  width: 100%;
 }
 
 .filter-group h3 {
@@ -127,6 +129,7 @@ export default defineComponent({
   flex-direction: column;
   max-height: calc(1.2rem * 5);
   align-items: flex-start;
+  width: 100%;
 }
 
 .filter-bar button {
