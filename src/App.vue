@@ -86,9 +86,9 @@ header {
 .mobile-menu {
   position: fixed;
   left: 0;
-  top: 63px;
+  top: 0;
   width: 100%;
-  height: calc(100dvh - 63px);
+  height: 100vh;
   background: var(--color-background);
   display: flex;
   flex-direction: column;
