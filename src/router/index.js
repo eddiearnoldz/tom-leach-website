@@ -20,11 +20,6 @@ const router = createRouter({
       component: () => import('../views/MediaView.vue')
     },
     {
-      path: '/press',
-      name: 'press',
-      component: () => import('../views/PressView.vue')
-    },
-    {
       path: '/contact',
       name: 'contact',
       component: () => import('../views/ContactView.vue')

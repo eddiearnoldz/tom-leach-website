@@ -41,7 +41,6 @@ watch(isMenuOpen, (newValue) => {
       <RouterLink to="/about" @click="closeMenu">About</RouterLink>
       <RouterLink to="/media" @click="closeMenu">Media</RouterLink>
       <RouterLink to="/contact" @click="closeMenu">Contact</RouterLink>
-      <RouterLink to="/press" @click="closeMenu">Press</RouterLink>
     </nav>
   </div>
   <RouterView />
