@@ -79,11 +79,6 @@ export default {
   text-align: left;
 }
 
-.filter-bar {
-  margin-top: 10px;
-  padding: 0 1rem;
-}
-
 @media screen and (min-width: 768px) {
   .album-title {
     font-size: 40px; /* Adjust as needed */

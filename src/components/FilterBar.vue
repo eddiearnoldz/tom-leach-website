@@ -2,17 +2,17 @@
   <div class="filter-bar">
     <div v-if="!isMobile || isOpen" class="filters">
       <div class="filter-group" v-for="(group, index) in groupedFilters" :key="index">
-        <h3>{{ group.name.replace("-", " ") }}</h3>
         <div class="filter-options">
           <button
-            v-for="filter in group.filters"
-            :key="filter"
-            @click="toggleFilter(filter)"
-            :class="{ active: isSelected(filter) }"
+          v-for="filter in group.filters"
+          :key="filter"
+          @click="toggleFilter(filter)"
+          :class="{ active: isSelected(filter) }"
           >
-            {{ filter.split("_")[1].replace("-", " ") }}
-          </button>
-        </div>
+          {{ filter.split("_")[1].replace("-", " ") }}
+        </button>
+      </div>
+      <h3>{{ group.name.replace("-", " ") }}</h3>
       </div>
     </div>
     <h2 v-if="isMobile" @click="toggleFilters">FILTER<span>(<span v-if="!isOpen">+</span><span v-if="isOpen">-</span>)</span></h2>
@@ -99,7 +99,7 @@ export default defineComponent({
 }
 
 .filter-bar h2 {
-  font-size: 1rem;
+  font-size: 0.8rem;
   cursor: pointer;
 }
 
@@ -114,12 +114,13 @@ export default defineComponent({
   flex-direction: column;
   padding: 0;
   width: max-content;
+  justify-content: flex-end;
 }
 
 .filter-group h3 {
   font-weight: bold;
   margin: 5px 0;
-  font-size: 1rem;
+  font-size: 0.8rem;
   width: 100%;
 }
 
@@ -128,11 +129,11 @@ export default defineComponent({
   flex-wrap: wrap;
   flex-direction: column;
   max-height: calc(1.2rem * 5);
-  align-items: flex-start;
+  align-items: flex-end;
 }
 
 .filter-bar button {
-  padding: 3px;
+  padding: 1px;
   background-color: transparent;
   border: none;
   cursor: pointer;
