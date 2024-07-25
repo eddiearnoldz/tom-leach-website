@@ -1,122 +1,122 @@
 export const albums = [
   {
     title: "One Million Pieces | LEAP | EP",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    image: '/assets/albums/leap_one_million_pieces.png',
     filters: ['contribution_writer', 'contribution_mixer', 'contribution_producer', 'year_2022', 'genre_rock']
   },
   {
     title: "Dark Habits | LEAP | EP",
-    image: '/assets/albums/oasis_be_here_now_album.webp',
+    image: '/assets/albums/leap_dark_habits.png',
     filters: ['contribution_writer', 'contribution_mixer', 'contribution_producer', 'year_2023', 'genre_rock']
   },
   {
     title: "One Way Out | LEAP | Single",
-    image: '/assets/albums/oasis_be_here_now_album.webp',
+    image: '/assets/albums/leap_one_way_out.png',
     filters: ['contribution_writer', 'contribution_mixer', 'contribution_producer', 'year_2024', 'genre_rock']
   },
   {
     title: "Power Trip | LEAP | EP",
-    image: '/assets/albums/oasis_be_here_now_album.webp',
+    image: '/assets/albums/leap_power_trip.png',
     filters: ['contribution_writer', 'contribution_mixer', 'contribution_producer', 'year_2024', 'genre_rock']
   },
   {
     title: "Real Life | AntsLive | Album",
-    image: '/assets/albums/oasis_whats_the_story_album.webp',
+    image: '/assets/albums/antslive_real_life.png',
     filters: ['contribution_mixer', 'contribution_mastering', 'year_2024', 'genre_rap']
   },
   {
     title: "Just a Matter of Time | AntsLive | Album",
-    image: '/assets/albums/oasis_whats_the_story_album.webp',
+    image: '/assets/albums/antslive_just_a_matter_of_time.png',
     filters: ['contribution_mixer', 'contribution_mastering', 'year_2023', 'genre_rap']
   },
   {
     title: "Tweakin | AntsLive | Single",
-    image: '/assets/albums/oasis_whats_the_story_album.webp',
+    image: '/assets/albums/antslive_tweakin.png',
     filters: ['contribution_mixer', 'contribution_mastering', 'year_2022', 'genre_rap']
   },
   {
     title: "Californication (Feels Like I'm Falling In Love) | Col3trane | Single",
-    image: '/assets/albums/oasis_heathen_chemistry_album.webp',
+    image: '/assets/albums/col3trane_californication.png',
     filters: ['contribution_mixer', 'year_2021', 'genre_r&b']
   },
   {
     title: "Rabbit Head | Tribes | Album",
-    image: '/assets/albums/oasis_standing_album.webp',
+    image: '/assets/albums/tribes_rabbit_head.png',
     filters: ['contribution_recording-engineer', 'contribution_mixer', 'contribution_mixer', 'contribution_production', 'year_2023', 'genre_rock']
   },
   {
     title: "monochrome blue | modernlove | EP",
-    image: '/assets/albums/oasis_whats_the_story_album.webp',
+    image: '/assets/albums/modernlove_monochrome_blue.png',
     filters: ['contribution_mixer', 'contribution_producer', 'year_2021', 'genre_indie']
   },
   {
     title: "Oh My Mind | modernlove | EP",
-    image: '/assets/albums/oasis_whats_the_story_album.webp',
+    image: '/assets/albums/modernlove_oh_my_mind.png',
     filters: ['contribution_mixer', 'contribution_producer', 'year_2022', 'genre_indie']
   },
   {
     title: "Nightlife | modernlove | EP",
-    image: '/assets/albums/oasis_whats_the_story_album.webp',
+    image: '/assets/albums/modernlove_nightlife.png',
     filters: ['contribution_mixer', 'contribution_producer', 'year_2023', 'genre_indie']
   },
   {
     title: "Yours | modernlove | Single",
-    image: '/assets/albums/oasis_whats_the_story_album.webp',
+    image: '/assets/albums/modernlove_yours.png',
     filters: ['contribution_mixer', 'contribution_producer', 'year_2024', 'genre_indie']
   },
   {
     title: "Don't Feel Myself | modernlove | Single",
-    image: '/assets/albums/oasis_whats_the_story_album.webp',
+    image: '/assets/albums/modernlove_dont_feel_myself.png',
     filters: ['contribution_mixer', 'contribution_producer', 'year_2024', 'genre_indie']
   },
   {
     title: "King of My Head | Declan Welsh and The Decadent West | Single",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    image: '/assets/albums/declan_welsh_king_of_my_head.png',
     filters: ['contribution_mixer', 'year_2023', 'genre_rock']
   },
   {
     title: "Mercy | Declan Welsh and The Decadent West | Single",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    image: '/assets/albums/declan_welsh_mercy.png',
     filters: ['contribution_mixer', 'year_2022', 'genre_rock']
   },
   {
     title: 'Before You Go (Orchestral) | Lewis Capaldi | Single',
-    image: '/assets/albums/defintely_maybe_album.webp',
+    image: '/assets/albums/lewis_capaldi_before_you_go.png',
     filters: ['contribution_mixer', 'contribution_production', 'year_2020', 'genre_pop']
   },
   {
     title: 'Bruises (Acoustic) | Lewis Capaldi | Single',
-    image: '/assets/albums/defintely_maybe_album.webp',
+    image: '/assets/albums/lewis_capaldi_bruises.png',
     filters: ['contribution_mixer', 'contribution_production', 'year_2019', 'genre_pop']
   },
   {
     title: "AUSTRIA | Glazed Curtains | Single",
-    image: '/assets/albums/oasis_standing_album.webp',
+    image: '/assets/albums/glazed_curtains_austria.png',
     filters: ['contribution_mixer', 'year_2024', 'genre_rock']
   },
   {
     title: "ADHD FEVER | Glazed Curtains | Single",
-    image: '/assets/albums/oasis_standing_album.webp',
+    image: '/assets/albums/glazed_curtains_adhd_fever.png',
     filters: ['contribution_mixer', 'year_2024', 'genre_rock']
   },
   {
     title: "Still Dressed For Winter | Now Ex | EP",
-    image: '/assets/albums/oasis_be_here_now_album.webp',
+    image: '/assets/albums/now_ex_still_dressed_for_winter.png',
     filters: ['contribution_mixer', 'contribution_producer', 'year_2023', 'genre_pop']
   },
   {
     title: "Welcome To The Feeling | Now Ex | EP",
-    image: '/assets/albums/oasis_be_here_now_album.webp',
+    image: '/assets/albums/now_ex_welcome_to_the_feeling.png',
     filters: ['contribution_mixer', 'contribution_producer', 'year_2024', 'genre_pop']
   },
   {
     title: "Live At St Pancras Old Church | Now Ex | Album",
-    image: '/assets/albums/oasis_be_here_now_album.webp',
+    image: '/assets/albums/now_ex_st_pancras.png',
     filters: ['contribution_mixer', 'contribution_mastering', 'year_2024', 'genre_pop']
   },
   {
     title: "Sad Kids In America | Now Ex | EP",
-    image: '/assets/albums/oasis_be_here_now_album.webp',
+    image: '/assets/albums/now_ex_sad_kids_in_america.png',
     filters: ['contribution_mixer', 'contribution_producer', 'year_2021', 'genre_pop']
   },
   {
