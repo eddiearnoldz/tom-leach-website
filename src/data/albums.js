@@ -226,22 +226,22 @@ export const albums = [
   },
   {
     title: "Rotate | Burna Boy, Becky G | Single",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    image: '/assets/albums/burna_boy_rotate.png',
     filters: ['contribution_recording-engineer', 'year_2021', 'genre_rap']
   },
   {
     title: "20 10 20 | Burna Boy | Single",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    image: '/assets/albums/burna_boy_20_10_20.png',
     filters: ['contribution_recording-engineer', 'year_2020', 'genre_afrobeat']
   },
   {
     title: "Once Kings | Riz Ahmed | Single",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
+    image: '/assets/albums/riz_ahmed_once_kings.png',
     filters: ['contribution_recording-engineer', 'year_2020', 'genre_rap']
   },
   {
-    title: "I'm Not Coming Home | hector Cottam| Single",
-    image: '/assets/albums/oasis_dont_believe_album.webp',
-    filters: ['contribution_producer', 'contribution_mastering', 'contribution_mixer', 'year_2021', 'genre_rap']
+    title: "I'm Not Coming Home | Hector Cottam | Single",
+    image: '/assets/albums/hector_cottam_im_not_coming_home.png',
+    filters: ['contribution_producer', 'contribution_mastering', 'contribution_mixer', 'year_2021', 'genre_rock']
   }
 ];

@@ -149,7 +149,7 @@ export default defineComponent({
 .clear-filters {
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: 20px;
   background-color: transparent;
   border: none;
   color: white;
