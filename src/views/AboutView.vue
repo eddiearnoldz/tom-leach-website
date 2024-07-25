@@ -10,15 +10,17 @@
 
 <style scoped>
   .about {
-    padding: 1rem;
-    height: 100dvh;
-    text-align: center;
     display: flex;
+    justify-content: center;
+    padding: 75px 1rem 50px;
+    height: max-content;
+    max-width: 1000px;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 1000px;
     margin: 0 auto;
+    text-align: center;;
   }
 
   .about a {
@@ -28,7 +30,7 @@
 
   @media screen and (min-width: 768px) {
     .about {
-      padding: 2rem;
+      padding: 4rem;
     }
   }
 </style>

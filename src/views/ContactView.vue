@@ -43,7 +43,7 @@
 <style>
  .contact {
     text-align: center;
-    height: calc(100dvh - 63px);
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;

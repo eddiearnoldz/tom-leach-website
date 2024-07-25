@@ -11,12 +11,15 @@
 
 <style>
   .media {
+    display: flex;
+    justify-content: center;
+    padding: 75px 1rem 50px;
+    height: max-content;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    position: absolute;
-    top: 63px;
-    right: 0;
-    left: 0;
-    padding: 2rem;
   }
 
   .spotify_embed {

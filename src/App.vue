@@ -57,7 +57,7 @@ header {
   z-index: 1000;
   position: fixed;
   width: 100vw;
-  background: transparent;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
 .logo {
