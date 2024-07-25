@@ -23,7 +23,7 @@ watch(isMenuOpen, (newValue) => {
 
 <template>
   <header>
-    <RouterLink @click="closeMenu" to="/" class="logo">TOM/LEACH</RouterLink>
+    <RouterLink @click="closeMenu" to="/" class="logo">TOM | LEACH</RouterLink>
     <button @click="toggleMenu" class="menu-button">
       <svg v-if="!isMenuOpen" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path class="line1" d="M4.96857 7.46857H24.9686" stroke="white" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
