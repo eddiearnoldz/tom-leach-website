@@ -107,7 +107,7 @@ export default defineComponent({
 .filters {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 20px;
 }
 
 .filter-group {
@@ -149,7 +149,7 @@ export default defineComponent({
 .clear-filters {
   position: absolute;
   bottom: 0;
-  right: 20px;
+  right: 0;
   background-color: transparent;
   border: none;
   color: white;
@@ -168,5 +168,10 @@ export default defineComponent({
   .filter-bar h2  {
     font-size: clamp(0.6rem, 1.1vw, 1.2rem);
   }
+
+  .clear-filters {
+    right: 20px;
+  }
+
 }
 </style>
