@@ -95,7 +95,8 @@ export default defineComponent({
   justify-content: center;
   overflow-x: scroll;
   z-index: 1;
-  width: 100vw;
+  width: max-content;
+  margin-right: auto;
 }
 
 .filter-bar h2 {
@@ -107,7 +108,7 @@ export default defineComponent({
   display: flex;
   flex-direction: row;
   gap: 10px;
-  width: max-content;
+  width: 100%;
 }
 
 .filter-group {
@@ -129,7 +130,7 @@ export default defineComponent({
   flex-direction: column;
   max-height: calc(1.2rem * 5);
   align-items: flex-start;
-  width: 100%;
+  width: max-content;
 }
 
 .filter-bar button {
