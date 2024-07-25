@@ -43,7 +43,7 @@ export default {
     backgroundStyle() {
       if (window.innerWidth >= 768) {
         return {
-          backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url(${this.activeAlbumImage})`,
+          backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2)), url(${this.activeAlbumImage})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
@@ -73,6 +73,7 @@ export default {
 
 .album-title {
   width: 100%;
+  margin-right: auto;
   text-align: center;
   font-size: 24px; /* Adjust as needed */
   font-weight: bold; /* Adjust as needed */
@@ -81,11 +82,22 @@ export default {
 
 @media screen and (min-width: 768px) {
   .album-title {
-    font-size: 40px; /* Adjust as needed */
+    font-size: 30px; /* Adjust as needed */
+    width: 20vw;
+    margin-right: auto;
+    margin-bottom: 10vh;
   }
 
   .album-footer {
     padding: 1rem 2rem;
+    padding-right: 0;
+    width: 25vw;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .album-title {
+    font-size: 40px;
   }
 }
 </style>

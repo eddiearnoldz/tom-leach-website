@@ -36,9 +36,13 @@ export default defineComponent({
     const isMobileView = ref(window.innerWidth < 768);
     const selectedFilters = ref([]);
     const filters = ref([
-      'contribution_sound-engineer',
+      'contribution_recording-engineer',
       'contribution_production',
-      'contribution_writing',
+      'contribution_writer',
+      'contribution_producer',
+      'contribution_mixer',
+      'contribution_master',
+      'year_2019',
       'year_2020',
       'year_2021',
       'year_2022',
@@ -47,8 +51,10 @@ export default defineComponent({
       'genre_rock',
       'genre_indie',
       'genre_alt',
-      'genre_trap',
-      'genre_rap'
+      'genre_afrobeat',
+      'genre_rap',
+      'genre_pop',
+      'genre_electronic'
     ]);
     const activeAlbumTitle = ref('');
     const activeAlbumImage = ref('');
@@ -108,10 +114,10 @@ export default defineComponent({
 
 <style scoped>
 .album_gallery {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100vw;
-  height: 100dvh;
+  height: max-content;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

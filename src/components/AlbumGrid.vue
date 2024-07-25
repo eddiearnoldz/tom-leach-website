@@ -54,11 +54,14 @@ export default defineComponent({
 <style scoped>
 .album-grid {
   display: grid;
-  grid-template-columns: repeat(8, calc(12.5% - 10px));
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(5, calc(20% - 10px));
   gap: 10px;
   padding: 2rem;
+  padding-left: 0;
   overflow: scroll;
+  height: 100%;
+  width: 75vw;
+  margin-left: auto;
 }
 
 .grid-item {

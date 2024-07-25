@@ -15,7 +15,7 @@
       <h3>{{ group.name.replace("-", " ") }}</h3>
       </div>
     </div>
-    <h2 v-if="isMobile" @click="toggleFilters">FILTER<span>(<span v-if="!isOpen">+</span><span v-if="isOpen">-</span>)</span></h2>
+    <h2  @click="toggleFilters">FILTERS<span v-if="isMobile">(<span v-if="!isOpen">+</span><span v-if="isOpen">-</span>)</span></h2>
     <button v-if="selectedFilters.length > 0" @click="clearFilters" class="clear-filters">clear ✕</button>
   </div>
 </template>
@@ -101,6 +101,7 @@ export default defineComponent({
 .filter-bar h2 {
   font-size: 0.8rem;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .filters {
@@ -119,7 +120,6 @@ export default defineComponent({
 
 .filter-group h3 {
   font-weight: bold;
-  margin: 5px 0;
   font-size: 0.8rem;
   width: 100%;
 }
@@ -128,8 +128,8 @@ export default defineComponent({
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  max-height: calc(1.2rem * 5);
-  align-items: flex-end;
+  align-items: flex-start;
+
 }
 
 .filter-bar button {
@@ -160,6 +160,13 @@ export default defineComponent({
 @media (min-width: 768px) {
   .filters {
     display: flex !important;
+    gap:clamp(10px, 1vw, 20px)
+  }
+
+  .filter-bar button,
+  .filter-group h3,
+  .filter-bar h2  {
+    font-size: clamp(0.6rem, 1.1vw, 1.2rem);
   }
 }
 </style>
