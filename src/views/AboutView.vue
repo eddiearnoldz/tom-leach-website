@@ -21,6 +21,11 @@
     margin: 0 auto;
   }
 
+  .about a {
+    color: #1C9BEF;
+    text-decoration: none;
+  }
+
   @media screen and (min-width: 768px) {
     .about {
       padding: 2rem;

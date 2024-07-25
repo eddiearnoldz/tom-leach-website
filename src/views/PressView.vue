@@ -14,5 +14,14 @@
 <style>
 .press {
   text-align: center;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.press a {
+  text-decoration: none;
+  color: #1C9BEF;
 }
 </style>
