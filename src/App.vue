@@ -96,7 +96,7 @@ header {
   justify-content: center;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease;
   z-index: 999;
 }
 
