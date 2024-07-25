@@ -83,5 +83,9 @@ export default {
   .album-title {
     font-size: 40px; /* Adjust as needed */
   }
+
+  .album-footer {
+    padding: 1rem 2rem;
+  }
 }
 </style>

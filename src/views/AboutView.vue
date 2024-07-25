@@ -8,6 +8,22 @@
   </div>
 </template>
 
-<style>
+<style scoped>
+  .about {
+    padding: 1rem;
+    height: 100dvh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
 
+  @media screen and (min-width: 768px) {
+    .about {
+      padding: 2rem;
+    }
+  }
 </style>
