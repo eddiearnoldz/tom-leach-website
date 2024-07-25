@@ -20,18 +20,18 @@ export default defineComponent({
       type: Array,
       required: true
     },
-    selectedFilter: {
-      type: String,
-      default: ''
+    selectedFilters: {
+      type: Array,
+      default: () => []
     }
   },
   emits: ['update-album-title'],
   setup(props, { emit }) {
     const filteredAlbums = computed(() => {
-      if (!props.selectedFilter) return props.albums;
-      return props.albums.filter(album =>
-        album.filters.includes(props.selectedFilter)
-      );
+      if (props.selectedFilters.length === 0) return props.albums;
+      return props.albums.filter(album => {
+        return props.selectedFilters.every(filter => album.filters.includes(filter));
+      });
     });
 
     const updateAlbumTitle = (title, image) => {
@@ -49,14 +49,17 @@ export default defineComponent({
 <style scoped>
 .album-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(8, calc(12.5% - 10px));
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
   padding: 2rem;
+  overflow: scroll;
 }
 
 .grid-item {
   position: relative;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .album-image {
@@ -64,5 +67,12 @@ export default defineComponent({
   height: 100%;
   object-fit: cover;
   border-radius: 2px;
+  aspect-ratio: 1;
+  transform: scale(1);
+  transition: transform 0.3s, margin 0.3s;
+}
+
+.album-image:hover {
+  transform: scale(1.2);
 }
 </style>

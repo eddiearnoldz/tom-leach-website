@@ -2,49 +2,71 @@
   <div class="album_gallery">
     <album-carousel-mobile 
       v-if="isMobileView" 
-      :albums="albums" 
-      :selectedFilter="selectedFilter"
+      :albums="filteredAlbums" 
+      :selectedFilters="selectedFilters"
       @update-album-title="updateAlbumTitle"
     ></album-carousel-mobile>
     <album-grid 
       v-else 
-      :albums="albums" 
-      :selectedFilter="selectedFilter"
+      :albums="filteredAlbums" 
+      :selectedFilters="selectedFilters"
       @update-album-title="updateAlbumTitle"
     ></album-grid>
     <album-footer 
       :filters="filters" 
-      :setFilter="setFilter" 
+      :toggleFilter="toggleFilter" 
       :activeAlbumTitle="activeAlbumTitle"
       :activeAlbumImage="activeAlbumImage"
+      :selectedFilters="selectedFilters"
     ></album-footer>
   </div>
 </template>
 
 <script>
-import { defineComponent, ref, onMounted, onUnmounted } from 'vue';
-import FilterBar from '@/components/FilterBar.vue';
+import { defineComponent, ref, computed, onMounted, onUnmounted } from 'vue';
 import AlbumCarouselMobile from '@/components/AlbumCarouselMobile.vue';
 import AlbumGrid from '@/components/AlbumGrid.vue';
 import AlbumFooter from '@/components/AlbumFooter.vue';
 import { albums } from '@/data/albums';
 
 export default defineComponent({
-  components: { FilterBar, AlbumCarouselMobile, AlbumGrid, AlbumFooter },
+  components: { AlbumCarouselMobile, AlbumGrid, AlbumFooter },
   setup() {
     const isMobileView = ref(window.innerWidth < 768);
-    const selectedFilter = ref('');
+    const selectedFilters = ref([]);
     const filters = ref([
-      'typeOfWork_soundEngineer',
-      'typeOfWork_production',
-      'typeOfWork_writing'
+      'type-of-work_sound-engineer',
+      'type-of-work_production',
+      'type-of-work_writing',
+      'year_2020',
+      'year_2021',
+      'year_2022',
+      'year_2023',
+      'year_2024',
+      'genre_rock',
+      'genre_indie',
+      'genre_alt',
+      'genre_trap',
+      'genre_rap'
     ]);
     const activeAlbumTitle = ref('');
     const activeAlbumImage = ref('');
 
-    const setFilter = filter => {
-      selectedFilter.value = filter;
+    const toggleFilter = filter => {
+      const index = selectedFilters.value.indexOf(filter);
+      if (index === -1) {
+        selectedFilters.value.push(filter);
+      } else {
+        selectedFilters.value.splice(index, 1);
+      }
     };
+
+    const filteredAlbums = computed(() => {
+      if (selectedFilters.value.length === 0) return albums;
+      return albums.filter(album =>
+        selectedFilters.value.every(filter => album.filters.includes(filter))
+      );
+    });
 
     const updateView = () => {
       isMobileView.value = window.innerWidth < 768;
@@ -65,13 +87,14 @@ export default defineComponent({
 
     return {
       isMobileView,
-      selectedFilter,
+      selectedFilters,
       filters,
-      setFilter,
       albums,
       activeAlbumTitle,
       activeAlbumImage,
-      updateAlbumTitle
+      updateAlbumTitle,
+      toggleFilter,
+      filteredAlbums
     };
   }
 });

@@ -3,7 +3,11 @@
     <div class="album-title" :style="backgroundStyle">
       {{ activeAlbumTitle }}
     </div>
-    <filter-bar :filters="filters" @filter-selected="setFilter"></filter-bar>
+    <filter-bar 
+      :filters="filters" 
+      @filter-selected="toggleFilter"
+      :selectedFilters="selectedFilters"
+    ></filter-bar>
   </div>
 </template>
 
@@ -17,8 +21,12 @@ export default {
       type: Array,
       required: true
     },
-    setFilter: {
+    toggleFilter: {
       type: Function,
+      required: true
+    },
+    selectedFilters: {
+      type: Array,
       required: true
     },
     activeAlbumTitle: {
@@ -34,7 +42,7 @@ export default {
     backgroundStyle() {
       if (window.innerWidth >= 768) {
         return {
-          backgroundImage: `url(${this.activeAlbumImage})`,
+          backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url(${this.activeAlbumImage})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
@@ -58,14 +66,13 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px 0;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0) 100%);
+  padding: 10px 1rem;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 100%);
 }
 
 .album-title {
   width: 100%;
   text-align: center;
-  padding: 0 16px;
   font-size: 24px; /* Adjust as needed */
   font-weight: bold; /* Adjust as needed */
   text-align: left;
@@ -73,6 +80,7 @@ export default {
 
 .filter-bar {
   margin-top: 10px;
+  padding: 0 1rem;
 }
 
 @media screen and (min-width: 768px) {

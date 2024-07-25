@@ -20,9 +20,9 @@ export default defineComponent({
       type: Array,
       required: true
     },
-    selectedFilter: {
-      type: String,
-      default: ''
+    selectedFilters: {
+      type: Array,
+      default: () => []
     }
   },
   emits: ['update-album-title'],
@@ -31,10 +31,10 @@ export default defineComponent({
     const carouselContainer = ref(null);
 
     const filteredAlbums = computed(() => {
-      if (!props.selectedFilter) return props.albums;
-      return props.albums.filter(album =>
-        album.filters.includes(props.selectedFilter)
-      );
+      if (props.selectedFilters.length === 0) return props.albums;
+      return props.albums.filter(album => {
+        return props.selectedFilters.every(filter => album.filters.includes(filter));
+      });
     });
 
     const getSlideStyle = (index) => {
@@ -42,6 +42,7 @@ export default defineComponent({
       if (!container) return {};
 
       const slide = container.children[index];
+      if (!slide) return {}; 
       const slideRect = slide.getBoundingClientRect();
       const slideMiddleY = slideRect.top + slideRect.height / 2;
       const thresholdY = window.innerHeight * 0.5; // 50vh from the top
