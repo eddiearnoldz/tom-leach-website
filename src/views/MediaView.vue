@@ -24,6 +24,7 @@
 
   .spotify_embed {
     margin-top: 30px;
+    width: 100%;
   }
   .spotify_embed iframe {
     height: 500px;
