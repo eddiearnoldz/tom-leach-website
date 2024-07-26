@@ -1,4 +1,6 @@
 User-agent: *
 Disallow: /private/
 Disallow: /about.html
-Allow: /public/
+Allow: /
+
+Sitemap: http://tslleach.com/sitemap.xml
