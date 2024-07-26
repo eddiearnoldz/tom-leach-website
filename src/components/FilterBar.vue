@@ -144,7 +144,7 @@ export default defineComponent({
 
 .filter-bar button.active,
 .filter-bar button.active:hover  {
-  color: #FEC600;
+  color: #fee500;
 }
 
 .clear-filters {
@@ -175,7 +175,7 @@ export default defineComponent({
   }
 
   .filter-bar button:hover {
-    color: #fe5d00;
+    color: #ff3e28;
   }
 
 }

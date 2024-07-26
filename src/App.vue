@@ -3,6 +3,8 @@ import { ref, watch } from 'vue';
 import { RouterLink, RouterView } from 'vue-router';
 
 const isMenuOpen = ref(false);
+const isLoading = ref(false);
+const clickedElement = ref(null);
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;
@@ -10,6 +12,14 @@ const toggleMenu = () => {
 
 const closeMenu = () => {
   isMenuOpen.value = false;
+};
+
+const handleClick = (event) => {
+  isLoading.value = true;
+  setTimeout(() => {
+    isLoading.value = false;
+    closeMenu();
+  }, 1000); // 1 second delay
 };
 
 watch(isMenuOpen, (newValue) => {
@@ -22,16 +32,16 @@ watch(isMenuOpen, (newValue) => {
 </script>
 
 <template>
-  <header>
-    <RouterLink @click="closeMenu" to="/" class="logo">
-      <span>TOM | LEACH</span>
-      <span>mixer | producer | engineer</span>
+  <header :class="{ 'loading': isLoading }">
+    <RouterLink @click="handleClick" to="/" class="logo">
+      <span >TOM | LEACH</span>
+      <span >mixer | producer | engineer</span>
     </RouterLink>
     <button @click="toggleMenu" class="menu-button" aria-label="toggle menu button">
       <svg v-if="!isMenuOpen" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path class="line1" d="M4.96857 7.46857H24.9686" stroke="white" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
         <path class="line2" d="M4.96857 14.9686H24.9686" stroke="white" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
-        <path class="line3" d="M4.96857 22.4686H24.9686" stroke="white" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
+        <path class="line3" d="M4.96857 22.4686H24.9686" stroke="white" stroke-width="2.0" stroke-linecap="round"/>
       </svg>
       <svg v-if="isMenuOpen" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path class="line1" d="M6.25 6.25L23.75 23.75" stroke="white" stroke-width="2.0" stroke-linecap="round"/>
@@ -39,17 +49,25 @@ watch(isMenuOpen, (newValue) => {
       </svg>
     </button>
   </header>
-  <div :class="{ 'menu-open': isMenuOpen }" class="mobile-menu">
+  <div :class="{ 'menu-open': isMenuOpen, 'loading': isLoading }" class="mobile-menu">
     <nav>
-      <RouterLink to="/about" @click="closeMenu">About</RouterLink>
-      <RouterLink to="/media" @click="closeMenu">Media</RouterLink>
-      <RouterLink to="/contact" @click="closeMenu">Contact</RouterLink>
+      <RouterLink to="/about" @click="handleClick" >About</RouterLink>
+      <RouterLink to="/media" @click="handleClick" >Media</RouterLink>
+      <RouterLink to="/contact" @click="handleClick">Contact</RouterLink>
     </nav>
   </div>
-  <RouterView />
+  <div :class="{ 'loading': isLoading }" class="content">
+    <router-view />
+  </div>
 </template>
 
 <style scoped>
+/* Global Styles */
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* Header and Menu Styles */
 header {
   display: flex;
   justify-content: space-between;
@@ -69,12 +87,13 @@ header {
   gap: 3px;
 }
 
-.logo span{
-  font-weight:bold;
+.logo span {
+  font-weight: bold;
   font-size: 1.5rem;
   color: var(--color-text);
   line-height: 1;
   font-family: 'Urbanist-Regular';
+  transition: color 0.3s;
 }
 
 .logo span:last-of-type {
@@ -118,16 +137,6 @@ header {
   pointer-events: auto;
 }
 
-.menu-header {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  right: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .mobile-menu nav {
   display: flex;
   flex-direction: column;
@@ -143,14 +152,35 @@ header {
   font-family: 'Urbanist-Regular';
 }
 
-@media screen and (min-width: 768px) {
+/* Blur and Loading Styles */
 
+
+.loading.mobile-menu nav a.router-link-active {
+  color: #ff3e28;
+  animation: scaleInOutMobile 0.8s ease-in-out forwards;
+}
+
+
+@media screen and (min-width: 768px) {
   header {
     padding: 1rem 2rem;
   }
 
   .mobile-menu nav a {
     font-size: 3.0rem;
+    transition: color 0.3s, transform 0.3s;
+  }
+
+  .mobile-menu nav a:hover {
+    font-size: 3.0rem;
+    color: #ff3e28;
+    transition: color 0.3s, transform 0.3s forwards;
+    transform: scale(1.1);
+  }
+
+  .logo:hover span {
+    color: #ff3e28;
+    transition: color 0.3s;
   }
 
   .logo span {
@@ -162,10 +192,46 @@ header {
   }
 
   .menu-button {
-  height: 35px;
-  width: 35px;
+    height: 35px;
+    width: 35px;
+    transition: color 0.3s, transform 0.3s;
+  }
+
+  .menu-button {
+    height: 35px;
+    width: 35px;
+  }
+
+  .menu-button svg path {
+    transition: stroke 0.3s;
+  }
+
+  .menu-button:hover svg path {
+    stroke: #ff3e28;
+    transition: stroke 0.3s;
+  }
+
+  .loading.mobile-menu nav a.router-link-active {
+    stroke: #ff3e28;
+    animation: scaleInOutDesktop 0.8s ease-in-out forwards;
+  }
 }
 
+@keyframes scaleInOutMobile {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
 }
 
+@keyframes scaleInOutDesktop {
+  0%, 100% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
 </style>

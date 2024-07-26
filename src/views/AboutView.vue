@@ -13,7 +13,7 @@
   .about {
     display: flex;
     justify-content: center;
-    padding: 75px 1rem 50px;
+    padding: 10rem 1rem 0;
     height: max-content;
     max-width: 1000px;
     width: 100%;
@@ -38,7 +38,7 @@
 
   @media screen and (min-width: 768px) {
     .about {
-      padding: 4rem;
+      padding: 10rem 4rem 0;
     }
   }
 </style>
