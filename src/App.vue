@@ -63,15 +63,18 @@ header {
 }
 
 .logo {
-  font-weight:bold;
-  font-size: 1.5rem;
   text-decoration: none;
-  color: var(--color-text);
-  line-height: 1;
-  font-family: 'Urbanist-Regular';
   display: flex;
   flex-direction: column;
   gap: 3px;
+}
+
+.logo span{
+  font-weight:bold;
+  font-size: 1.5rem;
+  color: var(--color-text);
+  line-height: 1;
+  font-family: 'Urbanist-Regular';
 }
 
 .logo span:last-of-type {
@@ -150,7 +153,7 @@ header {
     font-size: 3.0rem;
   }
 
-  .logo {
+  .logo span {
     font-size: 2rem;
   }
 
