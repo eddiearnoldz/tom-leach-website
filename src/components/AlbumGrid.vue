@@ -6,16 +6,27 @@
       class="grid-item"
       @mouseover="handleMouseOver(album)"
       @mouseleave="handleMouseLeave"
+      @click="handleClick(album)"
     >
       <img :src="album.image" :alt="album.title" class="album-image" />
     </div>
+    <video-modal
+      :isVisible="isModalVisible"
+      :videoId="currentVideoId"
+      :videoTitle="currentVideoTitle"
+      @close="isModalVisible = false"
+    />
   </div>
 </template>
 
 <script>
-import { defineComponent, computed } from 'vue';
+import { defineComponent, computed, ref } from 'vue';
+import VideoModal from '@/components/VideoModal.vue';
 
 export default defineComponent({
+  components: {
+    VideoModal
+  },
   props: {
     albums: {
       type: Array,
@@ -28,6 +39,10 @@ export default defineComponent({
   },
   emits: ['update-album-title'],
   setup(props, { emit }) {
+    const isModalVisible = ref(false);
+    const currentVideoId = ref('');
+    const currentVideoTitle = ref('');
+
     const filteredAlbums = computed(() => {
       if (props.selectedFilters.length === 0) return props.albums;
       return props.albums.filter(album => {
@@ -56,11 +71,33 @@ export default defineComponent({
       }
     };
 
+    const handleClick = (album) => {
+      if (album.videoUrl) {
+        // Extract the video ID from the URL
+        const videoId = album.videoUrl.split('v=')[1];
+        currentVideoId.value = videoId;
+        currentVideoTitle.value = album.title;
+        isModalVisible.value = true;
+        document.body.style.overflow = 'hidden'; // Stop scrolling
+      }
+    };
+
     return {
       filteredAlbums,
       handleMouseOver,
-      handleMouseLeave
+      handleMouseLeave,
+      handleClick,
+      isModalVisible,
+      currentVideoId,
+      currentVideoTitle
     };
+  },
+  watch: {
+    isModalVisible(newValue) {
+      if (!newValue) {
+        document.body.style.overflow = ''; // Enable scrolling
+      }
+    }
   }
 });
 </script>
@@ -68,7 +105,7 @@ export default defineComponent({
 <style scoped>
 .album-grid {
   display: grid;
-  grid-template-columns: repeat(5, calc(20% - 9px));
+  grid-template-columns: repeat(5, calc(20% - 10px));
   gap: 10px;
   padding: 2rem;
   padding-left: 0;
