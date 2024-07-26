@@ -54,7 +54,7 @@ export default defineComponent({
 <style scoped>
 .album-grid {
   display: grid;
-  grid-template-columns: repeat(5, calc(20% - 10px));
+  grid-template-columns: repeat(5, calc(20% - 9px));
   gap: 10px;
   padding: 2rem;
   padding-left: 0;
