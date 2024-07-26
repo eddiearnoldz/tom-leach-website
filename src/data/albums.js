@@ -42,7 +42,7 @@ export const albums = [
   {
     title: "Rabbit Head | Tribes | Album",
     image: '/assets/albums/tribes_rabbit_head.webp',
-    filters: ['contribution_recording-engineer', 'contribution_mixer', 'contribution_mixer', 'contribution_production', 'year_2023', 'genre_rock']
+    filters: ['contribution_recording-engineer', 'contribution_mixer', 'contribution_production', 'year_2023', 'genre_rock']
   },
   {
     title: "monochrome blue | modernlove | EP",

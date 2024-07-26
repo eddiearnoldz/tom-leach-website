@@ -18,6 +18,7 @@
       @clear-filters="clearFilters"
       :activeAlbumTitle="activeAlbumTitle"
       :activeAlbumImage="activeAlbumImage"
+      :activeAlbumContributions="activeAlbumContributions"
       :selectedFilters="selectedFilters"
     ></album-footer>
   </div>
@@ -58,6 +59,7 @@ export default defineComponent({
     ]);
     const activeAlbumTitle = ref('');
     const activeAlbumImage = ref('');
+    const activeAlbumContributions = ref([]);
 
     const toggleFilter = filter => {
       const index = selectedFilters.value.indexOf(filter);
@@ -83,9 +85,10 @@ export default defineComponent({
       isMobileView.value = window.innerWidth < 768;
     };
 
-    const updateAlbumTitle = ({ title, image }) => {
+    const updateAlbumTitle = ({ title, image, contributions }) => {
       activeAlbumTitle.value = title;
       activeAlbumImage.value = image;
+      activeAlbumContributions.value = contributions;
     };
 
     onMounted(() => {
@@ -103,6 +106,7 @@ export default defineComponent({
       albums,
       activeAlbumTitle,
       activeAlbumImage,
+      activeAlbumContributions,
       updateAlbumTitle,
       toggleFilter,
       clearFilters,

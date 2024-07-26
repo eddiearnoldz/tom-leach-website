@@ -1,7 +1,7 @@
 <template>
   <div class="album-footer">
-    <div class="album-title" :style="backgroundStyle">
-      {{ activeAlbumTitle }}
+    <div v-if="activeAlbumTitle" class="album-title" :style="backgroundStyle">
+      {{ activeAlbumTitle }} / {{ activeAlbumContributions.join(' - ') }}
     </div>
     <filter-bar 
       :filters="filters" 
@@ -37,6 +37,10 @@ export default {
     activeAlbumImage: {
       type: String,
       default: ''
+    },
+    activeAlbumContributions: {
+      type: Array,
+      default: () => []
     }
   },
   computed: {
@@ -80,6 +84,8 @@ export default {
   text-align: left;
 }
 
+
+
 @media screen and (min-width: 768px) {
   .album-title {
     font-size: 30px; /* Adjust as needed */
@@ -98,6 +104,7 @@ export default {
 @media screen and (min-width: 1024px) {
   .album-title {
     font-size: 40px;
+
   }
 }
 </style>

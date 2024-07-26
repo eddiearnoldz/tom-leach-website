@@ -4,8 +4,8 @@
       v-for="(album, index) in filteredAlbums"
       :key="index"
       class="grid-item"
-      @mouseover="updateAlbumTitle(album.title, album.image)"
-      @mouseleave="clearAlbumTitle"
+      @mouseover="handleMouseOver(album)"
+      @mouseleave="handleMouseLeave"
     >
       <img :src="album.image" :alt="album.title" class="album-image" />
     </div>
@@ -35,17 +35,31 @@ export default defineComponent({
       });
     });
 
-    const updateAlbumTitle = (title, image) => {
-      emit('update-album-title', { title, image });
+    const updateAlbumTitle = (title, image, contributions) => {
+      emit('update-album-title', { title, image, contributions });
     };
-    const clearAlbumTitle = () => {
-      emit('update-album-title', { title: '', image: '' });
+
+    const handleMouseOver = (album) => {
+      try {
+        const contributions = album.filters.filter(filter => filter.includes('contribution')).map(filter => filter.replace('contribution_', '').replace("-", " "));
+        updateAlbumTitle(album.title, album.image, contributions);
+      } catch (error) {
+        console.error('Error in handleMouseOver:', error);
+      }
+    };
+
+    const handleMouseLeave = () => {
+      try {
+        updateAlbumTitle('', '', []);
+      } catch (error) {
+        console.error('Error in handleMouseLeave:', error);
+      }
     };
 
     return {
       filteredAlbums,
-      updateAlbumTitle,
-      clearAlbumTitle
+      handleMouseOver,
+      handleMouseLeave
     };
   }
 });

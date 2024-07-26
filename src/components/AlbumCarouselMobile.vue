@@ -88,6 +88,7 @@ export default defineComponent({
       emit('update-album-title', {
         title: filteredAlbums.value[closestIndex].title,
         image: filteredAlbums.value[closestIndex].image,
+        contributions: filteredAlbums.value[closestIndex].filters.filter(filter => filter.includes('contribution')).map(filter => filter.replace('contribution_', '').replace("-", " "))
       });
     };
 
@@ -112,6 +113,7 @@ export default defineComponent({
       emit('update-album-title', {
         title: filteredAlbums.value[newIndex].title,
         image: filteredAlbums.value[newIndex].image,
+        contributions: filteredAlbums.value[newIndex].filters.filter(filter => filter.includes('contribution')).map(filter => filter.replace('contribution_', '').replace("-", " ")),
       });
     });
 
