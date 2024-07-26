@@ -1,7 +1,10 @@
 <template>
   <div class="album-footer">
     <div v-if="activeAlbumTitle" class="album-title" :style="backgroundStyle">
-      {{ activeAlbumTitle }} / {{ activeAlbumContributions.join(' - ') }}
+      {{ activeAlbumTitle }} 
+    </div>
+    <div v-if="activeAlbumContributions.length > 0" class="album--contributions" :style="backgroundStyle">
+       {{ activeAlbumContributions.join(' - ') }}
     </div>
     <filter-bar 
       :filters="filters" 
@@ -75,23 +78,34 @@ export default {
   background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 100%);
 }
 
-.album-title {
+.album-title,
+.album--contributions {
   width: 100%;
   margin-right: auto;
   text-align: center;
   font-size: 24px; /* Adjust as needed */
   font-weight: bold; /* Adjust as needed */
   text-align: left;
+  line-height: 1.2;
+}
+
+.album--contributions {
+  font-size: 16px;
+  text-align: right;
 }
 
 
 
 @media screen and (min-width: 768px) {
-  .album-title {
-    font-size: 30px; /* Adjust as needed */
+  .album-title,
+  .album--contributions {
+    font-size: 30px;
     width: 20vw;
     margin-right: auto;
+  }
+  .album--contributions {
     margin-bottom: 10vh;
+    font-size: 20px;
   }
 
   .album-footer {
@@ -104,7 +118,10 @@ export default {
 @media screen and (min-width: 1024px) {
   .album-title {
     font-size: 40px;
+  }
 
+  .album--contributions {
+    font-size: 30;
   }
 }
 </style>

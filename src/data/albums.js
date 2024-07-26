@@ -142,17 +142,17 @@ export const albums = [
   {
     title: "Doctor | HAWKE THE BAND | Single",
     image: '/assets/albums/hawke_the_band_doctor.webp',
-    filters: ['contribution_recording-enngineer', 'contribution_mixer', 'contribution_production', 'year_2024', 'genre_indie']
+    filters: ['contribution_recording-engineer', 'contribution_mixer', 'contribution_production', 'year_2024', 'genre_indie']
   },
   {
     title: "Proposal | HAWKE THE BAND | Single",
     image: '/assets/albums/hawke_the_band_proposal.webp',
-    filters: ['contribution_recording-enngineer', 'contribution_mixer', 'contribution_production', 'year_2024', 'genre_indie']
+    filters: ['contribution_recording-engineer', 'contribution_mixer', 'contribution_production', 'year_2024', 'genre_indie']
   },
   {
     title: "Scraps In The Bowl | HAWKE THE BAND | Single",
     image: '/assets/albums/hawke_the_band_scraps_in_the_bowl.webp',
-    filters: ['contribution_recording-enngineer', 'contribution_mixer', 'contribution_production', 'year_2024', 'genre_indie']
+    filters: ['contribution_recording-engineer', 'contribution_mixer', 'contribution_production', 'year_2024', 'genre_indie']
   },
   {
     title: "Bellicose Grounds | SUNKIN | Single",
@@ -177,12 +177,12 @@ export const albums = [
   {
     title: "Kanadia | Kanadia | Album",
     image: '/assets/albums/kanadia_kanadia.webp',
-    filters: ['contribution_mixer', 'contribution_recording_engineer', 'contribution_producer', 'year_2019', 'genre_rock']
+    filters: ['contribution_mixer', 'contribution_recording-engineer', 'contribution_producer', 'year_2019', 'genre_rock']
   },
   {
     title: "June | Kanadia | Album",
     image: '/assets/albums/kanadia_june.webp',
-    filters: ['contribution_mixer', 'contribution_recording_engineer', 'contribution_producer', 'year_2022', 'genre_rock']
+    filters: ['contribution_mixer', 'contribution_recording-engineer', 'contribution_producer', 'year_2022', 'genre_rock']
   },
   {
     title: "Garden | Exit Kid | Single",
