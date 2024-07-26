@@ -92,6 +92,7 @@ export default {
 .album--contributions {
   font-size: 16px;
   text-align: right;
+  margin-top: 0.5rem;
 }
 
 
@@ -106,6 +107,7 @@ export default {
   .album--contributions {
     margin-bottom: 10vh;
     font-size: 20px;
+    margin-top: 1rem;
   }
 
   .album-footer {
