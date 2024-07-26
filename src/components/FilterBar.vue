@@ -142,7 +142,8 @@ export default defineComponent({
   margin: 0px;
 }
 
-.filter-bar button.active {
+.filter-bar button.active,
+.filter-bar button.active:hover  {
   color: #FEC600;
 }
 
@@ -171,6 +172,10 @@ export default defineComponent({
 
   .clear-filters {
     right: 20px;
+  }
+
+  .filter-bar button:hover {
+    color: #fe5d00;
   }
 
 }

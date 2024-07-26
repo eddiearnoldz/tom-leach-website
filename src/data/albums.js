@@ -242,6 +242,6 @@ export const albums = [
   {
     title: "I'm Not Coming Home | Hector Cottam | Single",
     image: '/assets/albums/hector_cottam_im_not_coming_home.png',
-    filters: ['contribution_producer', 'contribution_mastering', 'contribution_mixer', 'year_2021', 'genre_rock']
+    filters: ['contribution_producer', 'contribution_mastering', 'contribution_mixer', 'year_2020', 'genre_rock']
   }
 ];
