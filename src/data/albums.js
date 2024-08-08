@@ -194,7 +194,7 @@ export const albums = [
     videoUrl: 'https://www.youtube.com/watch?v=xhvBqaL6ATI'
   },
   {
-    title: "Blindside| Neck&Neck | Single",
+    title: "Blindside | Neck&Neck | Single",
     image: '/assets/albums/neck_and_neck_blindside.webp',
     filters: ['contribution_mixer', 'contribution_producer', 'contribution_writer', 'year_2021', 'genre_rock'],
     videoUrl: 'https://www.youtube.com/watch?v=pjXg29dTHC4'
@@ -308,7 +308,7 @@ export const albums = [
     videoUrl: 'https://www.youtube.com/watch?v=wFvKnwrVSQE'
   },
   {
-    title: "And Nothing Hurt| Spiritualized | Album",
+    title: "And Nothing Hurt | Spiritualized | Album",
     image: '/assets/albums/spiritulaised_and_nothing_hurt.webp',
     filters: ['contribution_recording-engineer', 'year_2018', 'genre_indie'],
     videoUrl: 'https://www.youtube.com/watch?v=iOTAelwQ6Vw'

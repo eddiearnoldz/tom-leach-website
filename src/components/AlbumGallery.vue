@@ -43,6 +43,7 @@ export default defineComponent({
       'contribution_producer',
       'contribution_mixer',
       'contribution_mastering',
+      'year_2017',
       'year_2019',
       'year_2020',
       'year_2021',
