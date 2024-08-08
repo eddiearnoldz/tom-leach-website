@@ -1,10 +1,10 @@
 <template>
   <div class="about container">
     <h1>About me</h1>
-    <p>My name is Tom Leach, I'm a recording and mixing engineer based at Snap Studios in London, as well several other studios, including Miloco Studios, AIR Studios and Red Bull Studios. Music has always been my absolute passion, whether it's playing, recording or listening. Having trained in Manchester, It's my pleasure to work with live tracks, post production, through to full records and production.</p>
-    <p>Over my career so far, I've been fortunate to have  worked with artists and producers like Fergie, Lewis Capaldi, Burna Boy, Headie One, Pa Salieu, Tion Wayne, Wheatus, Shy FX, Mr Scruff, FKA Twigs, Years and Years, Stormzy, Wretch 32, Clean Bandit, Deaf Havana, Spiritualized, Beth Gibbons, James Ford, Jerry Boys, Haydn Bendall and many, many others.</p>
-    <p>I'm at home working on everything from Rock to EDM, hip hop to classical to big band and everything in between. Check out some of my work on the next page.</p>
-    <p>I'm one half of 9 Pockets, a production duo working on everything from major label releases to sync and score composition. More info on 9 Pockets here: <a href="https://9pockets.co.uk/" target="_blank">https://9pockets.co.uk/</a></p>
+    <p>I’m Tom Leach, a mixer, producer, and recording engineer based in East London. Music has always been my absolute passion, whether it's playing guitar and piano, writing, recording, or simply listening. I take great pleasure in collaborating with artists and musicians to help them realise and create their visions, producing songs, EPs, and albums.</p>
+    <p>Over the past decade, I’ve had the privilege of working in-house at renowned London studios such as Snap! Studios, AIR Studios, various Miloco rooms, Red Bull Studios, and more.</p>
+    <p>Throughout my career, I’ve been fortunate to work with an array of talented artists and producers, including Fergie, Lewis Capaldi, Burna Boy, Headie One, Tribes, Pa Salieu, Tion Wayne, Antslive, Shy FX, Mr Scruff, FKA Twigs, Riz Ahmed, Years and Years, Stormzy, Wretch 32, Clean Bandit, Deaf Havana, Spiritualized, Beth Gibbons, James Ford, Jerry Boys, Haydn Bendall, and many more.</p>
+    <p>Currently based at Pony Studios in East London, I mix and produce for a diverse range of artists, using bigger commercial facilities depending on the project's needs and budget. My work spans a variety of genres, from rock to EDM, hip hop to classical, and big band to everything in between. My goal is always to bring the sound in your head to life, making sure the final mix serves the song and delivers exactly what you envisioned</p>
     <img src="/assets/profile_picture.webp" alt="Tom in the studio">
   </div>
 </template>
