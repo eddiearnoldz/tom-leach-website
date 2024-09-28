@@ -139,7 +139,6 @@ export default defineComponent({
 
 .slide {
   width: 100%;
-  height: 25vh;
   margin: 5px 0;
   transition: transform 0.3s;
   display: flex;
