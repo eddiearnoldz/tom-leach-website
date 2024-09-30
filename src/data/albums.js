@@ -1,5 +1,11 @@
 export const albums = [
   {
+    title: "Real Life | AntsLive | Album",
+    image: '/assets/albums/antslive_real_life.webp',
+    filters: ['contribution_mixer', 'contribution_mastering', 'year_2024', 'genre_rap'],
+    videoUrl: 'https://www.youtube.com/watch?v=EeQt06eNnOM'
+  },
+  {
     title: "AUSTRIA | Glazed Curtains | Single",
     image: '/assets/albums/glazed_curtains_austria.webp',
     filters: ['contribution_mixer', 'year_2024', 'genre_rock'],
@@ -10,12 +16,6 @@ export const albums = [
     image: '/assets/albums/leap_one_way_out.webp',
     filters: ['contribution_writer', 'contribution_mixer', 'contribution_producer', 'year_2024', 'genre_rock'],
     videoUrl: 'https://www.youtube.com/watch?v=G1TvbXZDM-o'
-  },
-  {
-    title: "Real Life | AntsLive | Album",
-    image: '/assets/albums/antslive_real_life.webp',
-    filters: ['contribution_mixer', 'contribution_mastering', 'year_2024', 'genre_rap'],
-    videoUrl: 'https://www.youtube.com/watch?v=EeQt06eNnOM'
   },
   {
     title: "Rabbit Head | Tribes | Album",

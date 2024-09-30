@@ -6,12 +6,12 @@
     <div v-if="activeAlbumContributions.length > 0" class="album--contributions" :style="backgroundStyle">
        {{ activeAlbumContributions.join(' - ') }}
     </div>
-    <filter-bar 
+    <!-- <filter-bar 
       :filters="filters" 
       @filter-selected="toggleFilter"
       :selectedFilters="selectedFilters"
        @clear-filters="$emit('clear-filters')"
-    ></filter-bar>
+    ></filter-bar> -->
   </div>
 </template>
 
@@ -50,7 +50,7 @@ export default {
     backgroundStyle() {
       if (window.innerWidth >= 768) {
         return {
-          backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2)), url(${this.activeAlbumImage})`,
+          backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(${this.activeAlbumImage})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
@@ -100,13 +100,13 @@ export default {
 @media screen and (min-width: 768px) {
   .album-title,
   .album--contributions {
-    font-size: 30px;
+    font-size: 35px;
     width: 20vw;
     margin-right: auto;
   }
   .album--contributions {
-    margin-bottom: 10vh;
-    font-size: 20px;
+    margin-bottom: 5vh;
+    font-size: 25px;
     margin-top: 1rem;
   }
 
