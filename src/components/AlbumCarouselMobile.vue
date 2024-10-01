@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { defineComponent, ref, computed, onMounted, nextTick, watch } from 'vue';
+import { defineComponent, ref, computed, onMounted, nextTick, watch, onBeforeUnmount } from 'vue';
 
 export default defineComponent({
   props: {
@@ -38,45 +38,26 @@ export default defineComponent({
     });
 
     const getSlideStyle = (index) => {
-      const container = carouselContainer.value;
-      if (!container) return {};
-
-      const slide = container.children[index];
-      if (!slide) return {}; 
-      const slideRect = slide.getBoundingClientRect();
-      const slideMiddleY = slideRect.top + slideRect.height / 2;
-      const thresholdY = window.innerHeight * 0.5; // 50vh from the top
-
-      let scale;
-      if (index === activeIndex.value) {
-        scale = 1;
-      } else if (slideMiddleY > thresholdY) {
-        const distanceToThreshold = slideMiddleY - thresholdY;
-        const maxDistance = window.innerHeight - thresholdY;
-        const scaleFactor = Math.max(0.4, 1 - (distanceToThreshold / maxDistance));
-        scale = scaleFactor;
-      } else {
-        scale = 1;
-      }
-
       return {
-        transform: `scale(${scale})`,
+        transform: index === activeIndex.value ? 'scale(1)' : 'scale(0.8)',
+        transition: 'transform 0.3s'
       };
     };
 
     const onScroll = () => {
       const container = carouselContainer.value;
-      const thresholdY = window.innerHeight * 0.5; // 50vh from the top
+      if (!container) return;
+
+      const slideHeight = window.innerWidth - 30; // 100vw - 3rem (1rem = 16px)
+      const thresholdY = container.scrollTop + slideHeight / 2; // Calculate current center position based on scrollTop
 
       let closestIndex = 0;
       let closestDistance = Infinity;
 
       const slides = container.children;
       for (let i = 0; i < slides.length; i++) {
-        const slide = slides[i];
-        const slideRect = slide.getBoundingClientRect();
-        const slideMiddleY = slideRect.top + slideRect.height / 2;
-        const distance = Math.abs(thresholdY - slideMiddleY);
+        const slideTopY = i * slideHeight + slideHeight / 2; // Middle of each slide
+        const distance = Math.abs(thresholdY - slideTopY);
 
         if (distance < closestDistance) {
           closestDistance = distance;
@@ -84,36 +65,41 @@ export default defineComponent({
         }
       }
 
-      activeIndex.value = closestIndex;
-      emit('update-album-title', {
-        title: filteredAlbums.value[closestIndex].title,
-        image: filteredAlbums.value[closestIndex].image,
-        contributions: filteredAlbums.value[closestIndex].filters.filter(filter => filter.includes('contribution')).map(filter => filter.replace('contribution_', '').replace("-", " "))
-      });
-    };
-
-    const initializeScaling = () => {
-      const container = carouselContainer.value;
-      const slides = container.children;
-      for (let i = 0; i < slides.length; i++) {
-        getSlideStyle(i);
-      }
+        activeIndex.value = closestIndex;
+        emit('update-album-title', {
+          title: filteredAlbums.value[closestIndex].title,
+          image: filteredAlbums.value[closestIndex].image,
+          contributions: filteredAlbums.value[closestIndex].filters
+            .filter(filter => filter.includes('contribution'))
+            .map(filter => filter.replace('contribution_', '').replace("-", " ")),
+        });
     };
 
     onMounted(() => {
       const container = carouselContainer.value;
-      container.addEventListener('scroll', onScroll);
+      if (container) {
+        container.addEventListener('scroll', onScroll);
+      }
+
       nextTick(() => {
-        initializeScaling();
         onScroll(); // Initial call to set the first active slide
       });
+    });
+
+    onBeforeUnmount(() => {
+      const container = carouselContainer.value;
+      if (container) {
+        container.removeEventListener('scroll', onScroll);
+      }
     });
 
     watch(activeIndex, (newIndex) => {
       emit('update-album-title', {
         title: filteredAlbums.value[newIndex].title,
         image: filteredAlbums.value[newIndex].image,
-        contributions: filteredAlbums.value[newIndex].filters.filter(filter => filter.includes('contribution')).map(filter => filter.replace('contribution_', '').replace("-", " ")),
+        contributions: filteredAlbums.value[newIndex].filters
+          .filter(filter => filter.includes('contribution'))
+          .map(filter => filter.replace('contribution_', '').replace("-", " ")),
       });
     });
 
@@ -138,7 +124,8 @@ export default defineComponent({
 }
 
 .slide {
-  width: 100%;
+  width: calc(100vw - 3rem);
+  height: calc(100vw - 3rem); /* Height is equal to the width */
   margin: 5px 0;
   transition: transform 0.3s;
   display: flex;
@@ -149,11 +136,14 @@ export default defineComponent({
   scroll-snap-align: start;
 }
 
+.active-slide {
+  transform: scale(1);
+}
+
 .album-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 2px;
 }
-
 </style>
