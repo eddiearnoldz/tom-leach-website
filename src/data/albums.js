@@ -6,10 +6,22 @@ export const albums = [
     videoUrl: 'https://www.youtube.com/watch?v=EeQt06eNnOM'
   },
   {
+    title: "Rotate | Burna Boy, Becky G | Single",
+    image: '/assets/albums/burna_boy_rotate.webp',
+    filters: ['contribution_recording-engineer', 'year_2021', 'genre_rap'],
+    videoUrl: 'https://www.youtube.com/watch?v=l0K0R2kJDZk'
+  },
+  {
     title: "AUSTRIA | Glazed Curtains | Single",
     image: '/assets/albums/glazed_curtains_austria.webp',
     filters: ['contribution_mixer', 'year_2024', 'genre_rock'],
     videoUrl: 'https://www.youtube.com/watch?v=s7FF8LEFp8U'
+  },
+  {
+    title: "Enchanté | Fergie | Single",
+    image: '/assets/albums/fergie_enchante.webp',
+    filters: ['contribution_recording-engineer', 'year_2017', 'genre_pop'],
+    videoUrl: 'https://www.youtube.com/watch?v=x8GkozJqIqE'
   },
   {
     title: "One Way Out | LEAP | Single",
@@ -150,12 +162,6 @@ export const albums = [
     image: '/assets/albums/now_ex_st_pancras.webp',
     filters: ['contribution_mixer', 'contribution_mastering', 'year_2024', 'genre_pop'],
     videoUrl: 'https://www.youtube.com/watch?v=xBR0LWC9Lt8'
-  },
-  {
-    title: "Rotate | Burna Boy, Becky G | Single",
-    image: '/assets/albums/burna_boy_rotate.webp',
-    filters: ['contribution_recording-engineer', 'year_2021', 'genre_rap'],
-    videoUrl: 'https://www.youtube.com/watch?v=l0K0R2kJDZk'
   },
   {
     title: "20 10 20 | Burna Boy | Single",
@@ -324,12 +330,6 @@ export const albums = [
     image: '/assets/albums/spiritualised_everything_was_beautiful.webp',
     filters: ['contribution_recording-engineer', 'year_2022', 'genre_indie'],
     videoUrl: 'https://www.youtube.com/watch?v=ME0ji3o05UQ'
-  },
-  {
-    title: "Enchanté | Fergie | Single",
-    image: '/assets/albums/fergie_enchante.webp',
-    filters: ['contribution_recording-engineer', 'year_2017', 'genre_pop'],
-    videoUrl: 'https://www.youtube.com/watch?v=x8GkozJqIqE'
   },
   {
     title: "Human World | Peter Perrett | Album",
