@@ -38,7 +38,7 @@ export const albums = [
   {
     title: "Body | Tion Wayne | Single",
     image: '/assets/albums/body_tion_wayne.webp',
-    filters: ['contribution_recording_engineer', 'year_2021', 'genre_rap'],
+    filters: ['contribution_recording-engineer', 'year_2021', 'genre_rap'],
     videoUrl: 'https://www.youtube.com/watch?v=gYPX5juKBvg'
   },
   {
