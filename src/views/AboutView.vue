@@ -1,11 +1,33 @@
 <template>
   <div class="about container">
     <h1>About me</h1>
-    <p>I’m Tom Leach, a mixer, producer, and recording engineer based in East London. Music has always been my absolute passion, whether it's playing guitar and piano, writing, recording, or simply listening. I take great pleasure in collaborating with artists and musicians to help them realise and create their visions, producing songs, EPs, and albums.</p>
-    <p>Over the past decade, I’ve had the privilege of working in-house at renowned London studios such as Snap! Studios, AIR Studios, various Miloco rooms, Red Bull Studios, and more.</p>
-    <p>Throughout my career, I’ve been fortunate to work with an array of talented artists and producers, including Fergie, Lewis Capaldi, Burna Boy, Headie One, Tribes, Pa Salieu, Tion Wayne, Antslive, Shy FX, Mr Scruff, FKA Twigs, Riz Ahmed, Years and Years, Stormzy, Wretch 32, Clean Bandit, Deaf Havana, Spiritualized, Beth Gibbons, James Ford, Jerry Boys, Haydn Bendall, and many more.</p>
-    <p>Currently based at Pony Studios in East London, I mix and produce for a diverse range of artists, using bigger commercial facilities depending on the project's needs and budget. My work spans a variety of genres, from rock to EDM, hip hop to classical, and big band to everything in between. My goal is always to bring the sound in your head to life, making sure the final mix serves the song and delivers exactly what you envisioned</p>
-    <img src="/assets/profile_picture.webp" alt="Tom in the studio">
+    <p>Tom “TL” Leach is a writer, producer, mixer and recording engineer based in East London. Over the past decade, he's had the opportunity to work with a wide range of talented artists, including Fergie, Lewis Capaldi, Burna Boy, Headie One, Tribes, Pa Salieu, Tion Wayne, Antslive, Shy FX, Mr Scruff, FKA Twigs, Riz Ahmed, Years and Years, Stormzy, Wretch 32, Clean Bandit, Deaf Havana, Spiritualized, Beth Gibbons, James Ford, Jerry Boys, Haydn Bendall, and many others.</p>
+    <p>Recent projects include mix/mastering across <a href="https://open.spotify.com/artist/3JYp3dC5wTBWagBRR5fjpk?si=41lU5Y8fSPutPvFx7Ol-MQ" target="_blank">AntsLive’s</a> breakout into mainstream hip-hop, and co-writing/producing/mixing all of <a href="https://open.spotify.com/artist/538iX6YCTybcgzsrjDTrFi?si=7Lv_yPfOSmO7yvlCnVP8jw" target="_blank"> LEAP’s  </a>ascent as one the fastest growing rock projects in Europe. </p>
+    
+    <img src="/assets/tom_leach_pic.webp" alt="Tom in the studio">
+
+    <h2>PRESS HIGHLIGHTS</h2>
+
+    <div class="highlights">
+      <div class="highlight">
+        <p class="quote">“UK Rap Anthem of the future”</p>
+        <p class="publication">- NME (AntsLive) </p>
+      </div>
+      <div class="highlight">
+        <p class="quote">“Vigorous, adventurous, powerful tracks, this band will be seen on big stages” </p>
+        <p class="publication">- ROLLING STONE (LEAP) </p>
+      </div>
+      <div class="highlight">
+        <p class="quote">"a rush of explosive pop-rock"</p>
+        <p class="publication">- LINE OF BEST FIT (modernlove.)</p>
+      </div>
+      <div class="highlight">
+        <p class="quote">“Experimental, dynamic, refreshing guitar sound”</p>
+        <p class="publication">- MTV (LEAP) </p>
+      </div>
+    </div>
+
+
   </div>
 </template>
 
@@ -36,9 +58,39 @@
     width: 100%;
   }
 
+  .about h2 {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+  .highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .highlight {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .quote {
+    font-style: italic;
+    margin: 0;
+  }
+
+  .publication {
+    font-weight: 700;
+    margin: 0;
+  }
+
   @media screen and (min-width: 768px) {
     .about {
       padding: 10rem 4rem 0;
+    }
+
+    .about h2 {
+      font-size: 1.9rem;
     }
   }
 </style>

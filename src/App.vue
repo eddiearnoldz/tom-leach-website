@@ -35,7 +35,7 @@ watch(isMenuOpen, (newValue) => {
   <header :class="{ 'loading': isLoading }">
     <RouterLink @click="handleClick" to="/" class="logo">
       <span >TOM | LEACH</span>
-      <span >mixer | producer | engineer</span>
+      <span >writer | producer | mixer | engineer</span>
     </RouterLink>
     <button @click="toggleMenu" class="menu-button" aria-label="toggle menu button">
       <svg v-if="!isMenuOpen" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -89,7 +89,7 @@ header {
 
 .logo span {
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.925rem;
   color: var(--color-text);
   line-height: 1;
   font-family: 'Urbanist-Regular';
@@ -184,7 +184,7 @@ header {
   }
 
   .logo span {
-    font-size: 2rem;
+    font-size: 2.55rem;
   }
 
   .logo span:last-of-type {
