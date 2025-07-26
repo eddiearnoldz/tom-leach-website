@@ -1,8 +1,7 @@
 <template>
   <div class="media container">
     <h1>MEDIA</h1>
-    <p>Below is a playlist of songs I have worked on.</p>
-    <p>Please contact me if you are looking for a more in depth catalogue of my work.</p>
+    <p>select tracks from TL's writer/producer/mixer/engineer discography</p>
     <div class="spotify_embed">
       <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1xwb600oCkKYz0qO7NQsTz?si=f0d62cbb940c414a?utm_source=generator" width="100%" height="352" frameBorder="0"  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
